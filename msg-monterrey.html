@@ -1,0 +1,1634 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="MSG Monterrey — Multiservicios y Sistemas Generales de Monterrey. Tecnología clara para PyMEs: sistemas, nube, redes, seguridad, soporte e IA, con un solo responsable." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%230A2540'/%3E%3Cpath d='M12 34V14l12 12 12-12v20' fill='none' stroke='%23fff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='26' r='3.4' fill='%23F97316'/%3E%3C/svg%3E" />
+    <title>MSG Monterrey — Tu negocio digital, sin complicaciones</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root{
+        --navy:#0A2540; --navy-deep:#061A2E; --blue:#2563EB; --blue-soft:#DBEAFE;
+        --orange:#F97316; --orange-dark:#C2410C; --green:#10B981; --amber:#F59E0B;
+        --ink:#0F172A; --ink-2:#475569; --ink-3:#64748B;
+        --bg:#FFFFFF; --bg-soft:#F8FAFC; --bg-card:#FFFFFF; --line:#E2E8F0;
+        --header-bg:rgba(255,255,255,.92);
+        --shadow:0 10px 30px rgba(10,37,64,.08);
+        --shadow-lg:0 24px 60px rgba(10,37,64,.16);
+        --radius:14px;
+      }
+      @media (prefers-color-scheme: dark){
+        :root{
+          --bg:#07182B; --bg-soft:#0A2540; --bg-card:#0C2A47; --line:#1E3A56;
+          --ink:#EDF3FA; --ink-2:#B9C9DC; --ink-3:#8CA3BC;
+          --blue-soft:#12325A; --header-bg:rgba(6,26,46,.92);
+          --shadow:0 10px 30px rgba(0,0,0,.35); --shadow-lg:0 24px 60px rgba(0,0,0,.5);
+        }
+      }
+      *{box-sizing:border-box}
+      html{scroll-behavior:smooth}
+      body{
+        margin:0; font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+        background:var(--bg); color:var(--ink); font-size:16.5px; line-height:1.65;
+        -webkit-font-smoothing:antialiased;
+      }
+      h1,h2,h3,h4{font-family:"Sora","Inter",system-ui,sans-serif; line-height:1.18; margin:0; letter-spacing:-.01em}
+      p{margin:0}
+      a{color:var(--blue); text-decoration:none}
+      a:hover{text-decoration:underline}
+      img,svg{display:block}
+      .wrap{max-width:1180px; margin:0 auto; padding:0 22px}
+      section{padding:84px 0}
+      .sec-head{max-width:720px; margin-bottom:44px}
+      .sec-head.center{margin-left:auto; margin-right:auto; text-align:center}
+      .sec-head h2{font-size:clamp(28px,4vw,38px); font-weight:700; margin-bottom:14px}
+      .sec-head p{color:var(--ink-2); font-size:17.5px}
+      .kicker{
+        display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:600;
+        letter-spacing:.14em; text-transform:uppercase; color:var(--blue); margin-bottom:16px;
+      }
+      .kicker::before{content:""; width:22px; height:2px; background:var(--orange); border-radius:2px}
+      .sec-head.center .kicker::after{content:""; width:22px; height:2px; background:var(--orange); border-radius:2px}
+      .btn{
+        display:inline-flex; align-items:center; gap:9px; font-family:"Inter",sans-serif;
+        font-size:15.5px; font-weight:600; padding:13px 24px; border-radius:10px; border:1px solid transparent;
+        cursor:pointer; transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+      }
+      .btn:hover{text-decoration:none; transform:translateY(-1px)}
+      .btn-cta{background:var(--orange); color:#fff; box-shadow:0 10px 24px rgba(249,115,22,.32)}
+      .btn-cta:hover{background:var(--orange-dark)}
+      .btn-ghost{background:transparent; color:var(--ink); border-color:var(--line)}
+      .btn-ghost:hover{border-color:var(--blue); color:var(--blue)}
+      .btn-light{background:#fff; color:var(--navy)}
+      .btn-outline-light{background:transparent; color:#fff; border-color:rgba(255,255,255,.45)}
+      .btn-outline-light:hover{border-color:#fff; color:#fff}
+
+      /* ---------- Header ---------- */
+      header{
+        position:sticky; top:0; z-index:60; background:var(--header-bg);
+        backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid var(--line);
+      }
+      .header-in{display:flex; align-items:center; justify-content:space-between; gap:18px; padding:13px 0}
+      .brand{display:flex; align-items:center; gap:12px; color:var(--ink)}
+      .brand:hover{text-decoration:none}
+      .brand-text{line-height:1.05}
+      .brand-text .b-name{font-family:"Sora",sans-serif; font-weight:700; font-size:19px; letter-spacing:.01em; white-space:nowrap}
+      .brand-text .b-name span{color:var(--blue)}
+      .brand-text .b-name .b-mty-m{color:var(--orange)}
+      .brand-text .b-compact{display:none}
+      .brand-text .b-sub{font-size:10px; font-weight:600; letter-spacing:.24em; text-transform:uppercase; color:var(--ink-3); margin-top:3px}
+      @media (max-width:560px){
+        .brand-text .b-full{display:none}
+        .brand-text .b-compact{display:block; font-size:20px; letter-spacing:.02em}
+        .brand-text .b-sub{letter-spacing:.18em}
+        .brand svg{width:38px; height:38px}
+      }
+      nav.main{display:flex; align-items:center; gap:28px}
+      nav.main a{color:var(--ink-2); font-size:15px; font-weight:500}
+      nav.main a:hover{color:var(--blue); text-decoration:none}
+      nav.main .btn{padding:10px 18px; font-size:14.5px}
+      .menu-btn{display:none; background:none; border:1px solid var(--line); border-radius:9px; padding:9px 11px; cursor:pointer; color:var(--ink)}
+      .lang-switch{display:flex; align-items:center; gap:7px; margin-left:auto; color:var(--ink-3); flex:none}
+      .lang-switch select{
+        font-family:inherit; font-size:14px; font-weight:600; color:var(--ink);
+        background:var(--bg); border:1px solid var(--line); border-radius:9px; padding:8px 9px; cursor:pointer; max-width:150px;
+      }
+      .lang-switch select:focus{outline:2px solid var(--blue); outline-offset:1px}
+      @media (max-width:900px){
+        nav.main{
+          display:none; position:absolute; top:100%; left:0; right:0; flex-direction:column; align-items:stretch;
+          gap:0; background:var(--bg); border-bottom:1px solid var(--line); padding:10px 22px 18px; box-shadow:var(--shadow);
+        }
+        nav.main.open{display:flex}
+        nav.main a{padding:11px 4px; border-bottom:1px solid var(--line)}
+        nav.main .btn{margin-top:12px; justify-content:center}
+        .menu-btn{display:block}
+      }
+
+      /* ---------- Hero / slider ---------- */
+      .hero{
+        background:
+          radial-gradient(900px 480px at 85% -10%, rgba(37,99,235,.38), transparent 60%),
+          radial-gradient(700px 420px at -10% 110%, rgba(249,115,22,.14), transparent 55%),
+          linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 78%);
+        color:#fff; position:relative; overflow:hidden;
+      }
+      .hero-nodes{position:absolute; inset:0; opacity:.5; pointer-events:none}
+      .hero-in{position:relative; padding:86px 0 96px; min-height:520px; display:flex; flex-direction:column; justify-content:center}
+      .slides{position:relative}
+      .slide{display:none; max-width:780px; animation:fadeSlide .6s ease both}
+      .slide.active{display:block}
+      @keyframes fadeSlide{from{opacity:0; transform:translateY(14px)} to{opacity:1; transform:none}}
+      .slide .tag{
+        display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:600; letter-spacing:.13em;
+        text-transform:uppercase; color:#FDBA74; border:1px solid rgba(253,186,116,.4); border-radius:999px; padding:6px 14px; margin-bottom:24px;
+      }
+      .slide h1{font-size:clamp(36px,5.6vw,58px); font-weight:800; margin-bottom:20px}
+      .slide h1 em{font-style:normal; color:#7FB0FF}
+      .slide p{font-size:clamp(17px,2.2vw,20px); color:#C9D8EA; max-width:640px; margin-bottom:32px}
+      .hero-ctas{display:flex; flex-wrap:wrap; gap:14px}
+      .hero-nav{display:flex; align-items:center; gap:18px; margin-top:52px}
+      .dots{display:flex; gap:9px}
+      .dot{width:34px; height:4px; border-radius:4px; border:0; background:rgba(255,255,255,.28); cursor:pointer; padding:0; transition:background .2s}
+      .dot.active{background:var(--orange)}
+      .hero-arrows{display:flex; gap:8px; margin-left:auto}
+      .arrow-btn{
+        width:42px; height:42px; border-radius:50%; border:1px solid rgba(255,255,255,.35); background:transparent;
+        color:#fff; cursor:pointer; display:grid; place-items:center; transition:background .2s, border-color .2s;
+      }
+      .arrow-btn:hover{background:rgba(255,255,255,.12); border-color:#fff}
+      .hero-proof{
+        margin-top:40px; display:flex; flex-wrap:wrap; gap:10px 26px; color:#9DB4CC; font-size:14px;
+      }
+      .hero-proof span{display:inline-flex; align-items:center; gap:8px}
+      .hero-proof svg{color:var(--green); flex:none}
+
+      /* ---------- Pillars ---------- */
+      .pillars{background:var(--bg); padding:64px 0 8px}
+      .pillars-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px}
+      .pillar{
+        border:1px solid var(--line); border-radius:var(--radius); padding:28px 26px; background:var(--bg-card);
+        transition:box-shadow .2s ease, transform .2s ease;
+      }
+      .pillar:hover{box-shadow:var(--shadow); transform:translateY(-3px)}
+      .pillar .ic{
+        width:46px; height:46px; border-radius:11px; background:var(--blue-soft); color:var(--blue);
+        display:grid; place-items:center; margin-bottom:16px;
+      }
+      .pillar h3{font-size:19px; font-weight:600; margin-bottom:8px}
+      .pillar p{color:var(--ink-2); font-size:15.5px}
+
+      /* ---------- Services ---------- */
+      .services{background:var(--bg-soft)}
+      .svc-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:20px}
+      .svc{
+        background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
+        transition:box-shadow .2s ease;
+      }
+      .svc.open{box-shadow:var(--shadow)}
+      .svc-head{
+        width:100%; display:flex; gap:16px; align-items:flex-start; text-align:left; background:none; border:0;
+        padding:24px 24px 20px; cursor:pointer; font-family:inherit; color:inherit;
+      }
+      .svc-head .ic{
+        width:48px; height:48px; flex:none; border-radius:11px; background:var(--blue-soft); color:var(--blue);
+        display:grid; place-items:center;
+      }
+      .svc-head h3{font-size:18.5px; font-weight:600; margin-bottom:5px; padding-right:26px}
+      .svc-head p{color:var(--ink-2); font-size:15px}
+      .svc-head .chev{margin-left:auto; flex:none; color:var(--ink-3); transition:transform .25s ease; margin-top:4px}
+      .svc.open .svc-head .chev{transform:rotate(180deg)}
+      .svc-body{display:none; padding:2px 24px 24px 88px}
+      .svc.open .svc-body{display:block}
+      .svc-body h4{font-size:12.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); margin:16px 0 8px; font-family:"Inter",sans-serif; font-weight:700}
+      .svc-body ul{margin:0; padding:0; list-style:none}
+      .svc-body li{position:relative; padding:3px 0 3px 22px; color:var(--ink-2); font-size:15px}
+      .svc-body li::before{content:""; position:absolute; left:2px; top:12px; width:7px; height:7px; border-radius:50%; background:var(--orange)}
+      .svc-meta{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px}
+      .chip{
+        font-size:13px; font-weight:500; color:var(--ink-2); background:var(--bg-soft);
+        border:1px solid var(--line); border-radius:999px; padding:5px 12px;
+      }
+      .chip b{color:var(--ink); font-weight:600}
+      .svc-feature{
+        margin-top:20px; border-radius:var(--radius); padding:30px; color:#fff; position:relative; overflow:hidden;
+        background:linear-gradient(135deg, var(--navy) 0%, #103A63 100%);
+        display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:center;
+      }
+      .svc-feature h3{font-size:23px; margin-bottom:10px}
+      .svc-feature p{color:#C9D8EA; font-size:15.5px}
+      .svc-feature ul{margin:0; padding:0; list-style:none}
+      .svc-feature li{padding:5px 0 5px 24px; position:relative; color:#E4EDF7; font-size:15px}
+      .svc-feature li::before{content:""; position:absolute; left:2px; top:13px; width:7px; height:7px; border-radius:50%; background:var(--orange)}
+      .svc-note{margin-top:16px; color:var(--ink-3); font-size:14px; max-width:820px}
+
+      /* ---------- Compare + plans ---------- */
+      .compare{
+        display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--line); border-radius:var(--radius);
+        overflow:hidden; margin-bottom:64px; background:var(--bg-card);
+      }
+      .compare > div{padding:28px 30px}
+      .compare .old{background:var(--bg-soft)}
+      .compare h3{font-size:18px; margin-bottom:6px; display:flex; align-items:center; gap:10px}
+      .compare .old h3{color:var(--ink-2)}
+      .compare .new h3{color:var(--blue)}
+      .compare p.sub{color:var(--ink-3); font-size:14.5px; margin-bottom:14px}
+      .compare ul{margin:0; padding:0; list-style:none}
+      .compare li{padding:6px 0 6px 28px; position:relative; font-size:15px; color:var(--ink-2)}
+      .compare .old li::before{content:"✕"; position:absolute; left:4px; color:#DC2626; font-weight:700; font-size:13px; top:9px}
+      .compare .new li::before{content:"✓"; position:absolute; left:4px; color:var(--green); font-weight:700; font-size:14px; top:8px}
+      .plans{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; align-items:stretch}
+      .plan{
+        border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); padding:30px 26px;
+        display:flex; flex-direction:column; position:relative;
+      }
+      .plan.featured{border:2px solid var(--blue); box-shadow:var(--shadow-lg)}
+      .plan .badge{
+        position:absolute; top:-13px; left:26px; background:var(--blue); color:#fff; font-size:12px; font-weight:700;
+        letter-spacing:.06em; text-transform:uppercase; padding:4px 12px; border-radius:999px;
+      }
+      .plan h3{font-size:21px; margin-bottom:4px}
+      .plan .plan-tag{color:var(--blue); font-weight:600; font-size:15px; margin-bottom:6px}
+      .plan .plan-who{color:var(--ink-3); font-size:14px; margin-bottom:18px}
+      .plan ul{margin:0; padding:0; list-style:none; flex:1}
+      .plan li{padding:6px 0 6px 26px; position:relative; font-size:14.8px; color:var(--ink-2); border-bottom:1px dashed var(--line)}
+      .plan li:last-child{border-bottom:0}
+      .plan li::before{content:"✓"; position:absolute; left:2px; color:var(--green); font-weight:700; font-size:13.5px; top:8px}
+      .plan .plan-price{margin-top:20px; font-size:14px; color:var(--ink-3)}
+      .plan .plan-price b{display:block; font-family:"Sora",sans-serif; font-size:17px; color:var(--ink)}
+      .plans-note{margin-top:18px; color:var(--ink-3); font-size:14px; text-align:center}
+
+      /* ---------- Process ---------- */
+      .process{background:var(--bg-soft)}
+      .steps{display:grid; grid-template-columns:repeat(4,1fr); gap:20px}
+      .step{position:relative; padding:26px 22px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius)}
+      .step .num{
+        font-family:"Sora",sans-serif; font-weight:800; font-size:15px; color:#fff; background:var(--navy);
+        width:36px; height:36px; border-radius:50%; display:grid; place-items:center; margin-bottom:14px;
+      }
+      .step h3{font-size:17.5px; margin-bottom:7px}
+      .step p{color:var(--ink-2); font-size:14.8px}
+
+      /* ---------- Stats ---------- */
+      .stats-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px}
+      .stat{border-left:3px solid var(--orange); padding:6px 0 6px 20px}
+      .stat .big{font-family:"Sora",sans-serif; font-size:clamp(34px,4vw,44px); font-weight:800; color:var(--navy); line-height:1}
+      @media (prefers-color-scheme: dark){ .stat .big{color:#fff} }
+      .stat p{color:var(--ink-2); font-size:14.8px; margin-top:10px}
+      .stat .src{color:var(--ink-3); font-size:12.5px; margin-top:6px}
+
+      /* ---------- About / values ---------- */
+      .about{background:var(--navy-deep); color:#fff; position:relative; overflow:hidden}
+      .about .sec-head h2{color:#fff}
+      .about .sec-head p{color:#B9C9DC}
+      .about .kicker{color:#7FB0FF}
+      .mv-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:22px}
+      .mv{background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.14); border-radius:var(--radius); padding:26px 24px}
+      .mv h3{font-size:16px; letter-spacing:.1em; text-transform:uppercase; color:#FDBA74; margin-bottom:12px; font-family:"Inter",sans-serif; font-weight:700}
+      .mv p{color:#DCE7F3; font-size:15.5px}
+      .ideology{
+        border:1px solid rgba(249,115,22,.5); background:rgba(249,115,22,.08); border-radius:var(--radius);
+        padding:26px 28px; margin-bottom:44px; font-family:"Sora",sans-serif; font-size:clamp(18px,2.4vw,22px); font-weight:600; line-height:1.45;
+      }
+      .ideology span{color:#FDBA74}
+      .values-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:20px}
+      .value{background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.14); border-radius:var(--radius); padding:26px 24px}
+      .value h3{font-size:18.5px; margin-bottom:10px; display:flex; gap:12px; align-items:baseline}
+      .value h3 .vn{font-family:"Sora",sans-serif; color:var(--orange); font-weight:800; font-size:15px}
+      .value p{color:#C9D8EA; font-size:15px}
+      .value p b{color:#fff}
+      .value .not{margin-top:10px; color:#8CA3BC; font-size:14px}
+
+      /* ---------- Contact ---------- */
+      .contact-grid{display:grid; grid-template-columns:.9fr 1.1fr; gap:44px; align-items:start}
+      .contact-info h2{font-size:clamp(28px,4vw,36px); margin-bottom:14px}
+      .contact-info p{color:var(--ink-2); margin-bottom:22px}
+      .contact-item{display:flex; gap:14px; align-items:flex-start; padding:14px 0; border-top:1px solid var(--line)}
+      .contact-item .ic{width:42px; height:42px; flex:none; border-radius:10px; background:var(--blue-soft); color:var(--blue); display:grid; place-items:center}
+      .contact-item b{display:block; font-size:15px}
+      .contact-item span{color:var(--ink-2); font-size:14.5px}
+      form.diag{background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius); padding:28px; box-shadow:var(--shadow)}
+      form.diag h3{font-size:19px; margin-bottom:4px}
+      form.diag > p{color:var(--ink-3); font-size:14px; margin-bottom:18px}
+      .f-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+      .f-field{display:flex; flex-direction:column; gap:6px}
+      .f-field.full{grid-column:1 / -1}
+      .f-field label{font-size:13.5px; font-weight:600}
+      .f-field input,.f-field select,.f-field textarea{
+        font-family:inherit; font-size:15px; color:var(--ink); background:var(--bg); border:1px solid var(--line);
+        border-radius:9px; padding:11px 13px; width:100%;
+      }
+      .f-field input:focus,.f-field select:focus,.f-field textarea:focus{outline:2px solid var(--blue); outline-offset:1px; border-color:var(--blue)}
+      form.diag .btn{margin-top:18px; width:100%; justify-content:center}
+      .form-ok{display:none; margin-top:14px; background:rgba(16,185,129,.12); border:1px solid var(--green); color:var(--ink); border-radius:9px; padding:12px 14px; font-size:14.5px}
+      .form-ok.show{display:block}
+
+      footer{background:var(--navy-deep); color:#9DB4CC; padding:52px 0 34px}
+      .foot-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:36px; margin-bottom:36px}
+      footer h4{color:#fff; font-size:15px; margin-bottom:14px; font-family:"Inter",sans-serif; letter-spacing:.04em}
+      footer a{color:#9DB4CC; display:block; padding:3px 0; font-size:14.5px}
+      footer a:hover{color:#fff}
+      footer p{font-size:14.5px}
+      .foot-legal{border-top:1px solid rgba(255,255,255,.14); padding-top:22px; font-size:13px; color:#6E87A3; display:flex; flex-wrap:wrap; gap:8px 22px; justify-content:space-between}
+
+      .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease}
+      .reveal.in{opacity:1; transform:none}
+      @media (prefers-reduced-motion: reduce){
+        .reveal{opacity:1; transform:none; transition:none}
+        .slide{animation:none}
+        html{scroll-behavior:auto}
+      }
+
+      @media (max-width:1020px){
+        .pillars-grid{grid-template-columns:1fr}
+        .plans{grid-template-columns:1fr}
+        .steps{grid-template-columns:repeat(2,1fr)}
+        .stats-grid{grid-template-columns:repeat(2,1fr)}
+        .foot-grid{grid-template-columns:1fr 1fr}
+      }
+      @media (max-width:720px){
+        section{padding:60px 0}
+        .svc-grid{grid-template-columns:1fr}
+        .svc-body{padding-left:24px}
+        .svc-feature{grid-template-columns:1fr}
+        .compare{grid-template-columns:1fr}
+        .mv-grid{grid-template-columns:1fr}
+        .values-grid{grid-template-columns:1fr}
+        .contact-grid{grid-template-columns:1fr}
+        .f-grid{grid-template-columns:1fr}
+        .steps{grid-template-columns:1fr}
+        .stats-grid{grid-template-columns:1fr}
+        .hero-in{padding:60px 0 70px; min-height:0}
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ================= HEADER ================= -->
+    <header>
+      <div class="wrap header-in">
+        <a class="brand" href="#inicio" aria-label="MSG Monterrey — inicio">
+          <svg width="44" height="44" viewBox="0 0 48 48" aria-hidden="true">
+            <rect width="48" height="48" rx="11" fill="#0A2540"/>
+            <path d="M12 34V14l12 12 12-12v20" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="14" r="2.6" fill="#fff"/><circle cx="36" cy="14" r="2.6" fill="#fff"/>
+            <circle cx="24" cy="26" r="3.2" fill="#F97316"/>
+            <circle cx="12" cy="34" r="2.2" fill="#2563EB"/><circle cx="36" cy="34" r="2.2" fill="#2563EB"/>
+          </svg>
+          <span class="brand-text">
+            <span class="b-name b-full">MSG <span>Monterrey</span></span>
+            <span class="b-name b-compact" aria-hidden="true">MSG<span class="b-mty-m">M</span></span>
+            <span class="b-sub">Multiservicios y Sistemas</span>
+          </span>
+        </a>
+        <div class="lang-switch">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <select id="langSelect" aria-label="Idioma / Language">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+            <option value="pt">Português</option>
+          </select>
+        </div>
+        <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <nav class="main" id="mainNav">
+          <a href="#servicios">Servicios</a>
+          <a href="#planes">Planes</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#contacto" class="btn btn-cta">Solicitar diagnóstico</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <div class="hero" id="inicio">
+      <svg class="hero-nodes" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1200 600" aria-hidden="true">
+        <g stroke="rgba(127,176,255,.20)" stroke-width="1">
+          <path d="M820 60 L980 150 L1120 90 L1060 260 L1210 330" fill="none"/>
+          <path d="M980 150 L1060 260 L920 380 L1080 470" fill="none"/>
+          <path d="M700 480 L850 540 L1010 500" fill="none"/>
+          <path d="M60 520 L200 440 L330 510" fill="none"/>
+        </g>
+        <g fill="rgba(127,176,255,.55)">
+          <circle cx="820" cy="60" r="4"/><circle cx="980" cy="150" r="5"/><circle cx="1120" cy="90" r="4"/>
+          <circle cx="1060" cy="260" r="4"/><circle cx="920" cy="380" r="4"/><circle cx="1080" cy="470" r="5"/>
+          <circle cx="700" cy="480" r="4"/><circle cx="850" cy="540" r="4"/><circle cx="200" cy="440" r="4"/><circle cx="330" cy="510" r="4"/>
+        </g>
+        <circle cx="980" cy="150" r="6" fill="#F97316" opacity=".9"/>
+      </svg>
+      <div class="wrap hero-in">
+        <div class="slides" id="slides">
+          <div class="slide active">
+            <span class="tag">Tecnología para PyMEs · Monterrey</span>
+            <h1>Tu negocio digital, <em>sin complicaciones.</em></h1>
+            <p>Diagnosticamos, implementamos y cuidamos la tecnología de tu negocio: sistemas, nube, redes, seguridad y soporte, explicados en claro y con un solo responsable.</p>
+            <div class="hero-ctas">
+              <a href="#contacto" class="btn btn-cta">Solicitar diagnóstico
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+              <a href="#servicios" class="btn btn-outline-light">Ver servicios</a>
+            </div>
+          </div>
+          <div class="slide">
+            <span class="tag">Servicios gestionados · MSP</span>
+            <h1>Toda tu tecnología, <em>con un solo responsable.</em></h1>
+            <p>Monitoreamos, respaldamos y damos soporte antes de que algo falle. Tarifa mensual fija y presupuestable, en lugar de cobros sorpresa cada vez que algo se descompone.</p>
+            <div class="hero-ctas">
+              <a href="#planes" class="btn btn-cta">Ver planes mensuales
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+              <a href="#como-trabajamos" class="btn btn-outline-light">Cómo trabajamos</a>
+            </div>
+          </div>
+          <div class="slide">
+            <span class="tag">Sistemas · IA · Rentas</span>
+            <h1>Sistemas claros para <em>negocios que crecen.</em></h1>
+            <p>Facturación, inventario y cobranza sin hojas de cálculo sueltas; automatización e inteligencia artificial cuando tus datos ya están en orden; y administración de rentas apoyada en tecnología.</p>
+            <div class="hero-ctas">
+              <a href="#servicios" class="btn btn-cta">Explorar el portafolio
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+              <a href="#nosotros" class="btn btn-outline-light">Conócenos</a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-proof">
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Alcance y precio por escrito</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Sin tecnicismos</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Atención local en Monterrey</span>
+        </div>
+        <div class="hero-nav">
+          <div class="dots" id="dots" role="tablist" aria-label="Presentación"></div>
+          <div class="hero-arrows">
+            <button class="arrow-btn" id="prevSlide" aria-label="Anterior">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="arrow-btn" id="nextSlide" aria-label="Siguiente">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= PILLARS ================= -->
+    <div class="pillars">
+      <div class="wrap">
+        <div class="pillars-grid">
+          <article class="pillar reveal">
+            <div class="ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+            <h3>Claridad</h3>
+            <p>Te explicamos tu tecnología en el lenguaje de tu negocio, con alcance y precio por escrito antes de empezar. Nada de acrónimos sin explicar.</p>
+          </article>
+          <article class="pillar reveal">
+            <div class="ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.6 8-10V5l-8-3-8 3v7c0 6.4 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <h3>Prevención</h3>
+            <p>Monitoreamos y respaldamos antes de que algo falle, en lugar de cobrarte por reparar después. El éxito se mide en incidentes evitados.</p>
+          </article>
+          <article class="pillar reveal">
+            <div class="ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <h3>Cercanía local</h3>
+            <p>Estamos en Monterrey, respondemos en tus horarios y podemos ir a tu negocio. No es un centro de atención en otro país: conoces el nombre de quien te atiende.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= SERVICES ================= -->
+    <section class="services" id="servicios">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="kicker">Portafolio de servicios</span>
+          <h2>Todo lo que tu negocio necesita de tecnología, en un solo lugar</h2>
+          <p>Diez líneas de servicio que se combinan según lo que tu negocio necesita hoy. Toca cada una para ver qué incluye, para quién es, cómo se cobra y qué no incluye — sin letras chicas.</p>
+        </div>
+        <div class="svc-grid" id="svcGrid"></div>
+
+        <div class="svc-feature reveal">
+          <div>
+            <h3>¿Administras rentas? Esto es para ti</h3>
+            <p>La administración de rentas es un servicio administrativo apoyado en tecnología, distinto a la TI tradicional: su lenguaje es ocupación, cobranza y reportes claros para el propietario. MSG Monterrey puede darte el sistema para operarlo tú, u operar la administración por ti mes a mes.</p>
+          </div>
+          <ul>
+            <li>Contratos, cargos recurrentes, pagos y saldos por inmueble</li>
+            <li>Facturación CFDI en cada pago y estados de cuenta</li>
+            <li>Portal para inquilinos y reportes para propietarios</li>
+            <li>Seguimiento de mantenimiento y gastos por inmueble</li>
+          </ul>
+        </div>
+        <p class="svc-note">Nota de alcance: en sistemas de terceros (Microsoft 365, CONTPAQi, Aspel y otros), MSG Monterrey implementa, integra, administra y da soporte; no es el fabricante del sistema. En contratos de arrendamiento y temas legales o fiscales, MSG Monterrey aporta la tecnología y el flujo: la validez legal la valida asesoría especializada en Nuevo León.</p>
+      </div>
+    </section>
+
+    <!-- ================= PLANS ================= -->
+    <section id="planes">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="kicker">Servicios gestionados</span>
+          <h2>De reparar cuando se rompe, a prevenir para que no se pare</h2>
+          <p>El modelo tradicional cobra por visita y gana cuando algo falla. El modelo gestionado cobra una tarifa mensual fija y gana cuando nada falla. Esta es la diferencia:</p>
+        </div>
+        <div class="compare reveal">
+          <div class="old">
+            <h3>Soporte tradicional (reactivo)</h3>
+            <p class="sub">Llamas cuando algo ya se descompuso.</p>
+            <ul>
+              <li>Costo impredecible: cada visita es un cobro nuevo</li>
+              <li>Nadie revisa respaldos hasta que se necesitan</li>
+              <li>Cada problema es con un proveedor distinto</li>
+              <li>El negocio se detiene mientras se resuelve</li>
+            </ul>
+          </div>
+          <div class="new">
+            <h3>Servicios gestionados con MSG Monterrey</h3>
+            <p class="sub">¿Por qué esperar a que algo se rompa si se puede evitar la caída antes de que ocurra?</p>
+            <ul>
+              <li>Tarifa mensual fija y presupuestable</li>
+              <li>Monitoreo, parches y respaldos verificados de forma continua</li>
+              <li>Un solo responsable que coordina con todos los proveedores</li>
+              <li>Reporte mensual: qué se hizo, qué se evitó y qué sigue</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="plans">
+          <article class="plan reveal">
+            <h3>Esencial</h3>
+            <p class="plan-tag">Que no se pare</p>
+            <p class="plan-who">Para negocios de 1 a 10 usuarios que hoy no tienen a nadie de TI.</p>
+            <ul>
+              <li>Soporte remoto en horario hábil por ticket, WhatsApp o correo</li>
+              <li>Monitoreo básico de equipos críticos</li>
+              <li>Parches y antivirus básico</li>
+              <li>Verificación mensual de respaldos</li>
+              <li>Gestión básica de accesos y cuentas</li>
+              <li>Informe mensual de actividades</li>
+            </ul>
+            <p class="plan-price"><b>Cotización según diagnóstico</b>Mensual, por equipo o usuario</p>
+          </article>
+          <article class="plan featured reveal">
+            <span class="badge">El más contratado</span>
+            <h3>Profesional</h3>
+            <p class="plan-tag">Operación cuidada</p>
+            <p class="plan-who">Para PyMEs de 10 a 30 usuarios que dependen de sus sistemas todos los días.</p>
+            <ul>
+              <li>Todo lo del plan Esencial</li>
+              <li>Soporte prioritario y visitas programadas</li>
+              <li>Monitoreo 24/7 y parches automatizados</li>
+              <li>Respaldos gestionados y verificados</li>
+              <li>Administración de Microsoft 365 / Google Workspace</li>
+              <li>Doble autenticación y diagnóstico de riesgos</li>
+              <li>Informe mensual y revisión trimestral</li>
+            </ul>
+            <p class="plan-price"><b>Cotización según diagnóstico</b>Mensual, por equipo o usuario</p>
+          </article>
+          <article class="plan reveal">
+            <h3>Integral</h3>
+            <p class="plan-tag">Tecnología delegada</p>
+            <p class="plan-who">Para empresas que quieren delegar toda su TI y su seguridad en un solo proveedor.</p>
+            <ul>
+              <li>Todo lo del plan Profesional</li>
+              <li>Atención prioritaria y responsable asignado</li>
+              <li>Plan de recuperación probado, con tiempos escritos</li>
+              <li>Administración completa de nube, identidades y accesos</li>
+              <li>Seguridad gestionada: protección avanzada, firewall administrado y capacitación anti-phishing</li>
+              <li>Reunión de revisión y ruta de mejora anual</li>
+            </ul>
+            <p class="plan-price"><b>Cotización según diagnóstico</b>Mensual, a la medida por alcance</p>
+          </article>
+        </div>
+        <p class="plans-note">Los tiempos de primera respuesta y de resolución se definen por escrito en el acuerdo de servicio de cada plan, según el diagnóstico inicial. Sin diagnóstico previo no vendemos póliza: no heredamos problemas que no conocemos.</p>
+      </div>
+    </section>
+
+    <!-- ================= PROCESS ================= -->
+    <section class="process" id="como-trabajamos">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="kicker">Cómo trabajamos</span>
+          <h2>Cuatro pasos, todos por escrito</h2>
+          <p>Empezamos por un resultado visible en pocas semanas — una página web con correo corporativo, un respaldo verificado o salir de la hoja de cálculo — y de ahí construimos la relación.</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal">
+            <span class="num">1</span>
+            <h3>Diagnóstico</h3>
+            <p>Revisamos infraestructura, sistemas, seguridad, respaldos y costos de licencias. Recibes un reporte escrito con prioridades por riesgo e impacto.</p>
+          </article>
+          <article class="step reveal">
+            <span class="num">2</span>
+            <h3>Propuesta por escrito</h3>
+            <p>Qué incluye, qué no incluye, cuánto cuesta y en cuánto tiempo. Con ruta por etapas: qué primero, qué después y qué no hace falta todavía.</p>
+          </article>
+          <article class="step reveal">
+            <span class="num">3</span>
+            <h3>Implementación</h3>
+            <p>Instalamos, migramos y configuramos con capacitación a tu equipo y documentación entregada. Ningún sistema nuevo se entrega sin respaldo verificado.</p>
+          </article>
+          <article class="step reveal">
+            <span class="num">4</span>
+            <h3>Cuidado mensual</h3>
+            <p>Monitoreo, soporte, respaldos y reporte mensual bajo un plan gestionado. Tú te ocupas de tu negocio; nosotros, de que la tecnología no lo detenga.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STATS ================= -->
+    <section id="mercado">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="kicker">El punto de partida</span>
+          <h2>La PyME mexicana aún trabaja con hojas de cálculo</h2>
+          <p>Estas cifras son de estudios públicos recientes sobre digitalización de PyMEs en México y América Latina. No son cifras de MSG Monterrey: describen el mercado al que servimos, y por qué el primer paso casi siempre es ordenar lo básico.</p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat reveal">
+            <div class="big">76.3%</div>
+            <p>de las empresas sigue gestionando su administración con hojas de cálculo manuales</p>
+            <p class="src">Estudio ASEM / Siigo Aspel, citado por SiliconWeek (2026)</p>
+          </div>
+          <div class="stat reveal">
+            <div class="big">13%</div>
+            <p>usa software especializado para controlar inventarios; solo 22.3% usa software contable</p>
+            <p class="src">Estudio ASEM / Siigo Aspel, citado por SiliconWeek (2026)</p>
+          </div>
+          <div class="stat reveal">
+            <div class="big">28%</div>
+            <p>de las unidades económicas usa servicios en la nube, y apenas 2.1% sistemas de inteligencia artificial</p>
+            <p class="src">INEGI, Censos Económicos 2024 (actividad 2023)</p>
+          </div>
+          <div class="stat reveal">
+            <div class="big">86%</div>
+            <p>de las PyMEs de América Latina enfrentó al menos un incidente de ciberseguridad en el último año; el más frecuente fue el phishing, con 20%</p>
+            <p class="src">Estudio citado por Kaspersky, vía eSemanal (2026)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="about" id="nosotros">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="kicker">Nosotros</span>
+          <h2>Multiservicios y Sistemas Generales de Monterrey</h2>
+          <p>MSG Monterrey nace en 2026 como un concepto en creación: construir, desde cero y con las bases correctas, el aliado tecnológico de las PyMEs de Monterrey. Sin trayectoria inventada: con propósito, método y valores definidos desde el primer día.</p>
+        </div>
+        <div class="mv-grid">
+          <article class="mv reveal">
+            <h3>Propósito</h3>
+            <p>Que ninguna PyME de Monterrey se quede atrás por no entender o no poder pagar su tecnología: que la tecnología deje de ser un problema y se convierta en su forma de trabajar mejor todos los días.</p>
+          </article>
+          <article class="mv reveal">
+            <h3>Misión</h3>
+            <p>Acompañar a los negocios pequeños y medianos de Monterrey en su digitalización con sistemas claros, tecnología protegida y soporte cercano: diagnosticamos, implementamos y cuidamos su operación para que puedan vender, cobrar y administrar sin interrupciones.</p>
+          </article>
+          <article class="mv reveal">
+            <h3>Visión</h3>
+            <p>Ser el aliado tecnológico de confianza de las PyMEs del noreste de México: la primera empresa que un dueño de negocio recomienda cuando otro negocio quiere ordenarse, protegerse y crecer con tecnología.</p>
+          </article>
+        </div>
+        <div class="ideology reveal">Nuestra ideología, en una frase: <span>la tecnología de una PyME no debe depender de la suerte ni de una sola persona que “le sabe a las computadoras”</span>: debe estar ordenada, protegida y cuidada por alguien que responde.</div>
+
+        <div class="sec-head reveal" style="margin-bottom:30px">
+          <span class="kicker">Valores</span>
+          <h2 style="font-size:clamp(24px,3.4vw,30px)">Cinco valores, escritos como conductas</h2>
+          <p>Un valor que no se puede ver en el trabajo diario es solo una frase en la pared. Por eso cada valor de MSG Monterrey dice cómo se ve cuando se cumple — y qué no es.</p>
+        </div>
+        <div class="values-grid">
+          <article class="value reveal">
+            <h3><span class="vn">01</span> Claridad sin tecnicismos</h3>
+            <p><b>Se ve cuando</b> cada propuesta dice qué incluye, qué no incluye, cuánto cuesta y en cuánto tiempo, y cada término técnico va explicado por su efecto en el negocio. El cliente puede repetir con sus palabras qué contrató.</p>
+            <p class="not">No es simplificar hasta ocultar riesgos, ni prometer lo que no se puede cumplir.</p>
+          </article>
+          <article class="value reveal">
+            <h3><span class="vn">02</span> Prevención antes que reparación</h3>
+            <p><b>Se ve cuando</b> el monitoreo, los parches y los respaldos se revisan y se reportan aunque “todo esté bien”. El éxito se mide en incidentes evitados, no en visitas de emergencia facturadas.</p>
+            <p class="not">No es vender miedo, ni cobrar por revisiones que no se hacen.</p>
+          </article>
+          <article class="value reveal">
+            <h3><span class="vn">03</span> Un solo responsable</h3>
+            <p><b>Se ve cuando</b>, si algo falla, el cliente llama a MSG Monterrey y MSG Monterrey coordina con el proveedor que sea — internet, licencias o hardware. Nunca respondemos “eso no es con nosotros” sin una ruta de solución.</p>
+            <p class="not">No es asumir culpas ajenas ni prometer tiempos que dependen de terceros sin decirlo.</p>
+          </article>
+          <article class="value reveal">
+            <h3><span class="vn">04</span> Hecho para PyMEs reales</h3>
+            <p><b>Se ve cuando</b> proponemos la solución que el negocio necesita y puede pagar y mantener, aunque sea más pequeña que la que podríamos vender. Plazos y pagos pensados para un negocio que no puede parar.</p>
+            <p class="not">No es “barato”: es proporcionado. Ni es vender un sistema empresarial a un negocio de cinco personas.</p>
+          </article>
+          <article class="value reveal">
+            <h3><span class="vn">05</span> Cercanía local, respuesta en serio</h3>
+            <p><b>Se ve cuando</b> estamos en Monterrey, conocemos el giro del cliente, respondemos en los tiempos escritos y vamos al negocio cuando hace falta. El cliente conoce el nombre de quien lo atiende.</p>
+            <p class="not">No es informalidad: la cercanía no baja el rigor de los reportes, los respaldos ni los contratos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contacto">
+      <div class="wrap">
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <span class="kicker">Contacto</span>
+            <h2>Solicita tu diagnóstico</h2>
+            <p>Cuéntanos qué te duele hoy en tu negocio. Con eso preparamos el diagnóstico: qué tienes, qué riesgo corres y cuál es el primer paso con mayor impacto — con precio y tiempos por escrito.</p>
+            <div class="contact-item">
+              <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
+              <div><b>Correo</b><span><a href="mailto:contacto@msgmonterrey.com">contacto@msgmonterrey.com</a></span></div>
+            </div>
+            <div class="contact-item">
+              <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div><b>Cobertura</b><span>Monterrey y su área metropolitana, con atención en sitio; soporte remoto para el resto de México.</span></div>
+            </div>
+            <div class="contact-item">
+              <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+              <div><b>Primer paso</b><span>Sesión de descubrimiento para conocer tu caso; el diagnóstico a fondo se cotiza y puede bonificarse si contratas la implementación.</span></div>
+            </div>
+          </div>
+          <form class="diag reveal" id="diagForm">
+            <h3>Cuéntanos tu caso</h3>
+            <p>Seis datos, nada más. El botón abre tu correo con la solicitud ya redactada.</p>
+            <div class="f-grid">
+              <div class="f-field">
+                <label for="f-nombre">Tu nombre</label>
+                <input id="f-nombre" name="nombre" type="text" required autocomplete="name" placeholder="Nombre y apellido" />
+              </div>
+              <div class="f-field">
+                <label for="f-negocio">Negocio</label>
+                <input id="f-negocio" name="negocio" type="text" required placeholder="Nombre del negocio" />
+              </div>
+              <div class="f-field">
+                <label for="f-giro">Giro</label>
+                <select id="f-giro" name="giro" required>
+                  <option value="">Selecciona…</option>
+                  <option>Comercio / tienda</option>
+                  <option>Restaurante / alimentos</option>
+                  <option>Despacho / servicios profesionales</option>
+                  <option>Inmobiliaria / administración de rentas</option>
+                  <option>Manufactura / taller</option>
+                  <option>Salud / clínica</option>
+                  <option>Otro</option>
+                </select>
+              </div>
+              <div class="f-field">
+                <label for="f-usuarios">Usuarios / equipos</label>
+                <select id="f-usuarios" name="usuarios" required>
+                  <option value="">Selecciona…</option>
+                  <option>1 a 5</option>
+                  <option>6 a 10</option>
+                  <option>11 a 30</option>
+                  <option>Más de 30</option>
+                </select>
+              </div>
+              <div class="f-field full">
+                <label for="f-dolor">¿Qué te duele hoy?</label>
+                <textarea id="f-dolor" name="dolor" rows="4" required placeholder="Ej.: facturo a mano, no sé quién me debe, mi sistema se cae, no tengo respaldos…"></textarea>
+              </div>
+              <div class="f-field full">
+                <label for="f-tel">Teléfono o WhatsApp</label>
+                <input id="f-tel" name="telefono" type="tel" required autocomplete="tel" placeholder="81 0000 0000" />
+              </div>
+            </div>
+            <button type="submit" class="btn btn-cta">Enviar solicitud por correo
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg>
+            </button>
+            <div class="form-ok" id="formOk">Se abrió tu aplicación de correo con la solicitud redactada para <b>contacto@msgmonterrey.com</b>. Solo falta que la envíes.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+      <div class="wrap">
+        <div class="foot-grid">
+          <div>
+            <svg width="230" height="58" viewBox="0 0 250 64" role="img" aria-label="MSG Monterrey" style="margin-bottom:14px">
+              <rect x="2" y="6" width="52" height="52" rx="12" fill="#fff"/>
+              <path d="M15 42V24l13 13 13-13v18" fill="none" stroke="#0A2540" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="28" cy="37" r="3.2" fill="#F97316"/>
+              <text x="66" y="36" font-family="Sora, sans-serif" font-weight="700" font-size="19" fill="#fff">MSG Monterrey</text>
+              <text x="67" y="54" font-family="Inter, sans-serif" font-weight="600" font-size="9" letter-spacing="2.6" fill="#8CA3BC">MULTISERVICIOS Y SISTEMAS</text>
+            </svg>
+            <p>Tu negocio digital, sin complicaciones. Sistemas, nube, redes, seguridad, soporte e inteligencia artificial para PyMEs de Monterrey — con un solo responsable.</p>
+          </div>
+          <div>
+            <h4>Servicios</h4>
+            <a href="#servicios">Sistemas administrativos y software</a>
+            <a href="#servicios">Páginas web y correo corporativo</a>
+            <a href="#servicios">Nube y servidores virtuales</a>
+            <a href="#servicios">Redes, ciberseguridad y respaldos</a>
+            <a href="#planes">Soporte y planes gestionados</a>
+            <a href="#servicios">Administración de rentas</a>
+          </div>
+          <div>
+            <h4>Empresa</h4>
+            <a href="#nosotros">Nosotros, misión y valores</a>
+            <a href="#como-trabajamos">Cómo trabajamos</a>
+            <a href="#contacto">Solicitar diagnóstico</a>
+            <a href="mailto:contacto@msgmonterrey.com">contacto@msgmonterrey.com</a>
+          </div>
+        </div>
+        <div class="foot-legal">
+          <span>© 2026 Multiservicios y Sistemas Generales de Monterrey, S.A.S. de C.V. — Nombre comercial: MSG Monterrey.</span>
+          <span>Monterrey, Nuevo León, México.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      /* ============ Services data ============ */
+      var ICONS = {
+        diag: '<circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>',
+        soft: '<path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/>',
+        web: '<circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
+        cloud: '<path d="M17.5 19a4.5 4.5 0 0 0 .4-8.98 6.5 6.5 0 0 0-12.6 1.6A4 4 0 0 0 6 19z"/>',
+        net: '<rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M12 8v4m0 0-7 4m7-4 7 4"/>',
+        shield: '<path d="M12 22s8-3.6 8-10V5l-8-3-8 3v7c0 6.4 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>',
+        support: '<path d="M3 14v-2a9 9 0 0 1 18 0v2"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>',
+        backup: '<path d="M21 12a9 9 0 1 1-2.6-6.4"/><path d="M21 3v6h-6"/>',
+        ai: '<path d="M12 2v4m0 12v4M2 12h4m12 0h4"/><rect x="8" y="8" width="8" height="8" rx="2"/><circle cx="12" cy="12" r="1.4"/>',
+        rent: '<path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/><path d="M9 10h.01M15 10h.01M12 13h.01"/>'
+      };
+      function icon(name){
+        return '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ICONS[name] + '</svg>';
+      }
+      var SERVICES = [
+        { icon:'diag', title:'Diagnóstico y consultoría tecnológica',
+          line:'La puerta de entrada: saber exactamente dónde estás antes de gastar un peso.',
+          includes:['Diagnóstico de infraestructura, sistemas, seguridad, respaldos y licencias, con reporte escrito','Ruta digital por etapas: qué primero, qué después y qué no hace falta todavía','Consultoría en transformación digital, nube y costos de licencias','Capacitación a tu equipo en los sistemas implantados y en seguridad básica'],
+          who:'Todo negocio que hoy depende de “la persona que le sabe a las computadoras”.',
+          charge:'Proyecto único; puede bonificarse si contratas la implementación.',
+          not:'No incluye la implementación misma: esa se cotiza aparte, por escrito.' },
+        { icon:'soft', title:'Software y sistemas administrativos / contables',
+          line:'Facturación, inventario y cobranza sin hojas de cálculo sueltas.',
+          includes:['Implementación y soporte de sistemas administrativos y ERP según tu tamaño (plataformas mexicanas ajustadas al SAT, como las de uso extendido en PyMEs)','Facturación electrónica CFDI 4.0, complemento de pagos y nómina timbrada','Inventarios, punto de venta y compras integrados con contabilidad','CRM para ventas y seguimiento de clientes, integrado con WhatsApp y tu página web','Software a la medida cuando ningún sistema estándar alcanza','Migración de datos desde Excel o sistemas anteriores, con limpieza de datos'],
+          who:'Negocios que facturan, capturan o controlan inventario a mano.',
+          charge:'Por proyecto, con alcance cerrado, entregables y fecha; póliza de soporte mensual opcional.',
+          not:'No somos el fabricante de los sistemas de terceros: los implementamos, integramos y soportamos.' },
+        { icon:'web', title:'Páginas web y presencia digital',
+          line:'El servicio más visible y el que más rápido genera confianza.',
+          includes:['Página informativa, sitio corporativo o tienda en línea con pagos e inventario','Dominio, hosting administrado y correo corporativo con tu propio dominio (Microsoft 365 / Google Workspace)','Certificado de seguridad (SSL) y respaldos del sitio','Perfil de empresa en Google, analítica y posicionamiento básico'],
+          who:'Negocios que hoy solo existen en redes sociales o con correo gratuito.',
+          charge:'Proyecto único + mantenimiento mensual (actualizaciones, respaldos y cambios menores).',
+          not:'No prometemos “aparecer primero en Google”: el posicionamiento avanzado es un servicio aparte.' },
+        { icon:'cloud', title:'Servidores virtuales, nube e infraestructura cloud',
+          line:'Tus sistemas accesibles y protegidos, sin comprar servidores que se quedan chicos.',
+          includes:['Servidores virtuales (VPS) y servidores administrados Windows/Linux: configuración, parches, monitoreo y respaldo','Migración gradual a la nube y arquitectura híbrida: lo que conviene en sitio se queda en sitio','Administración de entornos en Azure, AWS y Google Cloud, con reporte de consumos','Productividad en la nube: correo, archivos compartidos, permisos y control de versiones'],
+          who:'Negocios que comparten archivos por USB o dependen de una sola computadora “servidor”.',
+          charge:'Suscripción mensual de administración + consumo de nube del proveedor a costo, con reporte.',
+          not:'El consumo del proveedor de nube no está incluido en la administración: se reporta cada mes.' },
+        { icon:'net', title:'Redes e infraestructura de TI',
+          line:'Internet que no se cae, WiFi sin puntos ciegos y una red documentada.',
+          includes:['Cableado estructurado Cat6/Cat6A certificado y fibra óptica para enlaces','WiFi empresarial: cobertura diseñada, red de invitados separada y monitoreo centralizado','Switches, routers y firewalls configurados: segmentación, VPN entre sucursales y calidad de servicio','Telefonía IP y videoconferencia integradas a tu red','Servidores en sitio, virtualización y respaldo eléctrico (UPS)'],
+          who:'Oficinas, locales y bodegas donde “el internet falla” es frase de todos los días.',
+          charge:'Proyecto de instalación + póliza de mantenimiento preventivo.',
+          not:'Toda instalación se entrega con diagrama de red actualizado: una red sin diagrama no es un entregable terminado.' },
+        { icon:'shield', title:'Ciberseguridad',
+          line:'Seguridad desde el diseño de cada proyecto, no como añadido al final.',
+          includes:['Protección de equipos y correo: antivirus empresarial avanzado, antiphishing y filtrado','Firewall, VPN segura, doble autenticación (MFA) y control de accesos con mínimo privilegio','Diagnóstico de riesgos, análisis de vulnerabilidades y endurecimiento de servidores','Capacitación anti-phishing para todo el personal, no solo para TI','Respuesta a incidentes: contención, limpieza, recuperación y lecciones aprendidas'],
+          who:'Todo negocio que maneje datos de clientes, facturación o banca en línea.',
+          charge:'Diagnóstico por proyecto + seguridad gestionada mensual.',
+          not:'Asesoramos en lo tecnológico y en buenas prácticas de protección de datos; los documentos legales los revisa un abogado.' },
+        { icon:'support', title:'Soporte técnico y servicios gestionados (MSP)',
+          line:'Tu departamento de TI externo: proactivo, con tiempos por escrito.',
+          includes:['Mesa de ayuda remota y en sitio por ticket, WhatsApp o correo, con tiempos de respuesta definidos','Monitoreo 24/7 de servidores, equipos, red y servicios críticos, con alertas proactivas','Parches y actualizaciones automatizados; inventario de equipos y licencias','Altas y bajas de usuarios, correos y permisos','Informe mensual de actividades, incidentes y respaldos, con reunión de revisión'],
+          who:'PyMEs que no pueden detenerse porque “se cayó el sistema”. Ver planes mensuales.',
+          charge:'Suscripción mensual por usuario/equipo o tarifa plana por alcance.',
+          not:'Los tiempos exactos se fijan por escrito en el acuerdo de servicio de tu plan.' },
+        { icon:'backup', title:'Respaldos y continuidad del negocio',
+          line:'Un respaldo que no se ha probado restaurar, no es un respaldo.',
+          includes:['Respaldo automático y cifrado de servidores, equipos, bases de datos y correo','Regla 3-2-1: varias copias, en distintos lugares, con al menos una que el ransomware no pueda cifrar','Verificación periódica de que el respaldo sí se puede restaurar','Plan de recuperación con objetivos escritos: cuánto dato se puede perder y en cuánto tiempo vuelves a operar'],
+          who:'Negocios que perderían días de trabajo — o el negocio — si mañana se cifra su información.',
+          charge:'Incluido en los planes gestionados superiores; también como servicio independiente por volumen.',
+          not:'Prometemos tiempos y pruebas de restauración, no imposibles: ningún sistema garantiza que nunca se perderá un dato.' },
+        { icon:'ai', title:'Inteligencia artificial y automatización',
+          line:'Primero ordenamos tus datos y procesos; después, la IA trabaja sola.',
+          includes:['Diagnóstico de automatización: qué procesos repiten más horas y errores, priorizados por retorno','Chatbots y agentes de IA en WhatsApp y web que consultan tu sistema y ejecutan: existencias, presupuestos, seguimiento','Automatización de tareas administrativas: lectura de facturas y documentos, captura, conciliación y recordatorios','Tableros de datos, pronósticos de ventas e inventario y asistentes internos con tus documentos','Adopción de copilotos (Microsoft Copilot y equivalentes) con gobierno de datos y capacitación'],
+          who:'Negocios con procesos ordenados que pierden horas en captura y seguimiento manual.',
+          charge:'Diagnóstico + proyecto por proceso + mantenimiento mensual para que el agente no se degrade.',
+          not:'La IA sin datos ordenados y sin un responsable del proceso fracasa: si hace falta, la fase de orden va incluida y por escrito.' },
+        { icon:'rent', title:'Administración de rentas y servicios administrativos',
+          line:'Nuestro servicio distintivo: administrar rentas con sistema, no con libretas.',
+          includes:['Sistema de rentas: inmuebles, contratos con vigencias y condiciones, depósitos y comisiones','Cobranza: cargos recurrentes, pagos, saldos, alertas y reportes de rentas vencidas y ocupación','Facturación CFDI en cada pago y portal del inquilino para pagar y consultar','Portal del propietario: ingresos, ocupación, gastos y utilidad','Servicio gestionado: MSG Monterrey opera la cobranza y los reportes por ti, mes a mes','Digitalización de expedientes y control de cobranza recurrente de otros servicios'],
+          who:'Propietarios, inmobiliarias y administradores de condominios con cartera creciente.',
+          charge:'Implementación inicial + suscripción por número de propiedades o cartera administrada.',
+          not:'MSG Monterrey aporta la tecnología y el flujo; la validez legal de los contratos la valida asesoría legal en cada estado. No ofrecemos contabilidad ni asesoría fiscal: ordenamos la información para tu contador.' }
+      ];
+      var grid = document.getElementById('svcGrid');
+      SERVICES.forEach(function(s, i){
+        var card = document.createElement('article');
+        card.className = 'svc' + (i === 0 ? ' open' : '');
+        var lis = s.includes.map(function(x){ return '<li>' + x + '</li>'; }).join('');
+        card.innerHTML =
+          '<button class="svc-head" aria-expanded="' + (i === 0) + '">' +
+            '<span class="ic">' + icon(s.icon) + '</span>' +
+            '<span><h3>' + s.title + '</h3><p>' + s.line + '</p></span>' +
+            '<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>' +
+          '</button>' +
+          '<div class="svc-body">' +
+            '<h4>Qué incluye</h4><ul>' + lis + '</ul>' +
+            '<h4>Para quién</h4><ul><li>' + s.who + '</li></ul>' +
+            '<div class="svc-meta">' +
+              '<span class="chip"><b>Cómo se cobra:</b>&nbsp;' + s.charge + '</span>' +
+            '</div>' +
+            '<h4>Qué no incluye</h4><ul><li>' + s.not + '</li></ul>' +
+          '</div>';
+        card.querySelector('.svc-head').addEventListener('click', function(){
+          var open = card.classList.toggle('open');
+          this.setAttribute('aria-expanded', open);
+        });
+        grid.appendChild(card);
+      });
+
+      /* ============ Hero slider ============ */
+      var slides = Array.prototype.slice.call(document.querySelectorAll('#slides .slide'));
+      var dotsBox = document.getElementById('dots');
+      var current = 0, timer = null;
+      slides.forEach(function(_, i){
+        var d = document.createElement('button');
+        d.className = 'dot' + (i === 0 ? ' active' : '');
+        d.setAttribute('aria-label', 'Ir a la diapositiva ' + (i + 1));
+        d.addEventListener('click', function(){ goTo(i); restart(); });
+        dotsBox.appendChild(d);
+      });
+      var dots = Array.prototype.slice.call(dotsBox.children);
+      function goTo(i){
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = (i + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+      function restart(){
+        clearInterval(timer);
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          timer = setInterval(function(){ goTo(current + 1); }, 6000);
+        }
+      }
+      document.getElementById('nextSlide').addEventListener('click', function(){ goTo(current + 1); restart(); });
+      document.getElementById('prevSlide').addEventListener('click', function(){ goTo(current - 1); restart(); });
+      document.querySelector('.hero').addEventListener('mouseenter', function(){ clearInterval(timer); });
+      document.querySelector('.hero').addEventListener('mouseleave', restart);
+      restart();
+
+      /* ============ Mobile menu ============ */
+      var menuBtn = document.getElementById('menuBtn');
+      var mainNav = document.getElementById('mainNav');
+      menuBtn.addEventListener('click', function(){
+        var open = mainNav.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', open);
+      });
+      mainNav.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', function(){ mainNav.classList.remove('open'); });
+      });
+
+      /* ============ Reveal on scroll ============ */
+      var revealEls = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){
+            if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+          });
+        }, { threshold: 0.12 });
+        revealEls.forEach(function(el){ io.observe(el); });
+      } else {
+        revealEls.forEach(function(el){ el.classList.add('in'); });
+      }
+
+      /* ============ Diagnostic form -> mailto ============ */
+      var FORM_T = { subject:'Solicitud de diagnóstico — ', nombre:'Nombre: ', negocio:'Negocio: ', giro:'Giro: ', usuarios:'Usuarios / equipos: ', tel:'Teléfono o WhatsApp: ', dolor:'¿Qué nos duele hoy?' };
+      document.getElementById('diagForm').addEventListener('submit', function(ev){
+        ev.preventDefault();
+        var v = function(id){ return document.getElementById(id).value.trim(); };
+        var subject = FORM_T.subject + v('f-negocio');
+        var body = [
+          FORM_T.nombre + v('f-nombre'),
+          FORM_T.negocio + v('f-negocio'),
+          FORM_T.giro + v('f-giro'),
+          FORM_T.usuarios + v('f-usuarios'),
+          FORM_T.tel + v('f-tel'),
+          '',
+          FORM_T.dolor,
+          v('f-dolor')
+        ].join('\n');
+        var mailLink = document.createElement('a');
+        mailLink.href = 'mailto:contacto@msgmonterrey.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        document.body.appendChild(mailLink);
+        mailLink.click();
+        document.body.removeChild(mailLink);
+        document.getElementById('formOk').classList.add('show');
+      });
+    </script>
+    <script>
+      /* ============ Multilenguaje: detección automática + selector manual ============ */
+      var I18N_EN = {
+        'Multiservicios y Sistemas':'Multiservices and Systems',
+        'MULTISERVICIOS Y SISTEMAS':'MULTISERVICES AND SYSTEMS',
+        'Servicios':'Services',
+        'Planes':'Plans',
+        'Nosotros':'About us',
+        'Solicitar diagnóstico':'Request a diagnosis',
+        'Tecnología para PyMEs · Monterrey':'Technology for SMBs · Monterrey',
+        'Tu negocio digital,':'Your digital business,',
+        'sin complicaciones.':'made simple.',
+        'Diagnosticamos, implementamos y cuidamos la tecnología de tu negocio: sistemas, nube, redes, seguridad y soporte, explicados en claro y con un solo responsable.':'We assess, implement and look after your business technology: systems, cloud, networks, security and support, explained in plain language and with a single point of accountability.',
+        'Ver servicios':'View services',
+        'Servicios gestionados · MSP':'Managed services · MSP',
+        'Toda tu tecnología,':'All your technology,',
+        'con un solo responsable.':'with one accountable partner.',
+        'Monitoreamos, respaldamos y damos soporte antes de que algo falle. Tarifa mensual fija y presupuestable, en lugar de cobros sorpresa cada vez que algo se descompone.':'We monitor, back up and provide support before anything fails. A fixed, budgetable monthly fee, instead of surprise charges every time something breaks.',
+        'Ver planes mensuales':'View monthly plans',
+        'Cómo trabajamos':'How we work',
+        'Sistemas · IA · Rentas':'Systems · AI · Rentals',
+        'Sistemas claros para':'Clear systems for',
+        'negocios que crecen.':'growing businesses.',
+        'Facturación, inventario y cobranza sin hojas de cálculo sueltas; automatización e inteligencia artificial cuando tus datos ya están en orden; y administración de rentas apoyada en tecnología.':'Billing, inventory and collections without loose spreadsheets; automation and artificial intelligence once your data is in order; and rental management backed by technology.',
+        'Explorar el portafolio':'Explore the portfolio',
+        'Conócenos':'Get to know us',
+        'Alcance y precio por escrito':'Scope and price in writing',
+        'Sin tecnicismos':'No jargon',
+        'Atención local en Monterrey':'Local support in Monterrey',
+        'Claridad':'Clarity',
+        'Te explicamos tu tecnología en el lenguaje de tu negocio, con alcance y precio por escrito antes de empezar. Nada de acrónimos sin explicar.':'We explain your technology in the language of your business, with scope and price in writing before we start. No unexplained acronyms.',
+        'Prevención':'Prevention',
+        'Monitoreamos y respaldamos antes de que algo falle, en lugar de cobrarte por reparar después. El éxito se mide en incidentes evitados.':'We monitor and back up before anything fails, instead of charging you to repair it afterwards. Success is measured in incidents prevented.',
+        'Cercanía local':'Local presence',
+        'Estamos en Monterrey, respondemos en tus horarios y podemos ir a tu negocio. No es un centro de atención en otro país: conoces el nombre de quien te atiende.':'We are in Monterrey, we reply during your business hours and we can visit your business. This is not a call center in another country: you know the name of the person helping you.',
+        'Portafolio de servicios':'Service portfolio',
+        'Todo lo que tu negocio necesita de tecnología, en un solo lugar':'Everything your business needs in technology, in one place',
+        'Diez líneas de servicio que se combinan según lo que tu negocio necesita hoy. Toca cada una para ver qué incluye, para quién es, cómo se cobra y qué no incluye — sin letras chicas.':'Ten service lines that combine according to what your business needs today. Tap each one to see what it includes, who it is for, how it is charged and what it does not include — no fine print.',
+        '¿Administras rentas? Esto es para ti':'Do you manage rentals? This is for you',
+        'La administración de rentas es un servicio administrativo apoyado en tecnología, distinto a la TI tradicional: su lenguaje es ocupación, cobranza y reportes claros para el propietario. MSG Monterrey puede darte el sistema para operarlo tú, u operar la administración por ti mes a mes.':'Rental management is an administrative service backed by technology, different from traditional IT: its language is occupancy, collections and clear reports for the owner. MSG Monterrey can give you the system to run it yourself, or run the management for you month by month.',
+        'Contratos, cargos recurrentes, pagos y saldos por inmueble':'Contracts, recurring charges, payments and balances per property',
+        'Facturación CFDI en cada pago y estados de cuenta':'CFDI invoicing on every payment and account statements',
+        'Portal para inquilinos y reportes para propietarios':'Tenant portal and owner reports',
+        'Seguimiento de mantenimiento y gastos por inmueble':'Maintenance and expense tracking per property',
+        'Nota de alcance: en sistemas de terceros (Microsoft 365, CONTPAQi, Aspel y otros), MSG Monterrey implementa, integra, administra y da soporte; no es el fabricante del sistema. En contratos de arrendamiento y temas legales o fiscales, MSG Monterrey aporta la tecnología y el flujo: la validez legal la valida asesoría especializada en Nuevo León.':'Scope note: for third-party systems (Microsoft 365, CONTPAQi, Aspel and others), MSG Monterrey implements, integrates, manages and supports them; it is not the manufacturer. For lease contracts and legal or tax matters, MSG Monterrey provides the technology and the workflow: legal validity is confirmed by specialized counsel in Nuevo León.',
+        'Servicios gestionados':'Managed services',
+        'De reparar cuando se rompe, a prevenir para que no se pare':'From repairing when it breaks, to preventing it so it never stops',
+        'El modelo tradicional cobra por visita y gana cuando algo falla. El modelo gestionado cobra una tarifa mensual fija y gana cuando nada falla. Esta es la diferencia:':'The traditional model charges per visit and profits when something fails. The managed model charges a fixed monthly fee and profits when nothing fails. This is the difference:',
+        'Soporte tradicional (reactivo)':'Traditional support (reactive)',
+        'Llamas cuando algo ya se descompuso.':'You call when something has already broken down.',
+        'Costo impredecible: cada visita es un cobro nuevo':'Unpredictable cost: every visit is a new charge',
+        'Nadie revisa respaldos hasta que se necesitan':'Nobody checks backups until they are needed',
+        'Cada problema es con un proveedor distinto':'Every problem means a different provider',
+        'El negocio se detiene mientras se resuelve':'The business stops while it gets fixed',
+        'Servicios gestionados con MSG Monterrey':'Managed services with MSG Monterrey',
+        '¿Por qué esperar a que algo se rompa si se puede evitar la caída antes de que ocurra?':'Why wait for something to break if the outage can be prevented before it happens?',
+        'Tarifa mensual fija y presupuestable':'Fixed, budgetable monthly fee',
+        'Monitoreo, parches y respaldos verificados de forma continua':'Continuous monitoring, patching and verified backups',
+        'Un solo responsable que coordina con todos los proveedores':'A single point of accountability coordinating with all providers',
+        'Reporte mensual: qué se hizo, qué se evitó y qué sigue':'Monthly report: what was done, what was prevented and what comes next',
+        'Esencial':'Essential',
+        'Que no se pare':'Keep it running',
+        'Para negocios de 1 a 10 usuarios que hoy no tienen a nadie de TI.':'For businesses of 1 to 10 users that currently have no IT person.',
+        'Soporte remoto en horario hábil por ticket, WhatsApp o correo':'Remote support during business hours by ticket, WhatsApp or email',
+        'Monitoreo básico de equipos críticos':'Basic monitoring of critical equipment',
+        'Parches y antivirus básico':'Patching and basic antivirus',
+        'Verificación mensual de respaldos':'Monthly backup verification',
+        'Gestión básica de accesos y cuentas':'Basic access and account management',
+        'Informe mensual de actividades':'Monthly activity report',
+        'Cotización según diagnóstico':'Quoted after diagnosis',
+        'Mensual, por equipo o usuario':'Monthly, per device or user',
+        'El más contratado':'Most popular',
+        'Profesional':'Professional',
+        'Operación cuidada':'Well-tended operations',
+        'Para PyMEs de 10 a 30 usuarios que dependen de sus sistemas todos los días.':'For SMBs of 10 to 30 users that rely on their systems every day.',
+        'Todo lo del plan Esencial':'Everything in the Essential plan',
+        'Soporte prioritario y visitas programadas':'Priority support and scheduled visits',
+        'Monitoreo 24/7 y parches automatizados':'24/7 monitoring and automated patching',
+        'Respaldos gestionados y verificados':'Managed, verified backups',
+        'Administración de Microsoft 365 / Google Workspace':'Microsoft 365 / Google Workspace administration',
+        'Doble autenticación y diagnóstico de riesgos':'Two-factor authentication and risk assessment',
+        'Informe mensual y revisión trimestral':'Monthly report and quarterly review',
+        'Integral':'Comprehensive',
+        'Tecnología delegada':'Fully delegated technology',
+        'Para empresas que quieren delegar toda su TI y su seguridad en un solo proveedor.':'For companies that want to delegate all their IT and security to a single provider.',
+        'Todo lo del plan Profesional':'Everything in the Professional plan',
+        'Atención prioritaria y responsable asignado':'Priority attention and an assigned lead',
+        'Plan de recuperación probado, con tiempos escritos':'Tested recovery plan, with written timeframes',
+        'Administración completa de nube, identidades y accesos':'Full administration of cloud, identities and access',
+        'Seguridad gestionada: protección avanzada, firewall administrado y capacitación anti-phishing':'Managed security: advanced protection, managed firewall and anti-phishing training',
+        'Reunión de revisión y ruta de mejora anual':'Review meeting and annual improvement roadmap',
+        'Mensual, a la medida por alcance':'Monthly, tailored to scope',
+        'Los tiempos de primera respuesta y de resolución se definen por escrito en el acuerdo de servicio de cada plan, según el diagnóstico inicial. Sin diagnóstico previo no vendemos póliza: no heredamos problemas que no conocemos.':"First-response and resolution times are defined in writing in each plan's service agreement, based on the initial diagnosis. We do not sell a plan without a prior diagnosis: we do not inherit problems we do not know.",
+        'Cuatro pasos, todos por escrito':'Four steps, all in writing',
+        'Empezamos por un resultado visible en pocas semanas — una página web con correo corporativo, un respaldo verificado o salir de la hoja de cálculo — y de ahí construimos la relación.':'We start with a visible result within a few weeks — a website with corporate email, a verified backup, or getting off spreadsheets — and build the relationship from there.',
+        'Diagnóstico':'Diagnosis',
+        'Revisamos infraestructura, sistemas, seguridad, respaldos y costos de licencias. Recibes un reporte escrito con prioridades por riesgo e impacto.':'We review infrastructure, systems, security, backups and license costs. You receive a written report with priorities by risk and impact.',
+        'Propuesta por escrito':'Written proposal',
+        'Qué incluye, qué no incluye, cuánto cuesta y en cuánto tiempo. Con ruta por etapas: qué primero, qué después y qué no hace falta todavía.':'What it includes, what it does not include, how much it costs and how long it takes. With a staged roadmap: what comes first, what comes next and what is not needed yet.',
+        'Implementación':'Implementation',
+        'Instalamos, migramos y configuramos con capacitación a tu equipo y documentación entregada. Ningún sistema nuevo se entrega sin respaldo verificado.':'We install, migrate and configure, with training for your team and documentation handed over. No new system is delivered without a verified backup.',
+        'Cuidado mensual':'Monthly care',
+        'Monitoreo, soporte, respaldos y reporte mensual bajo un plan gestionado. Tú te ocupas de tu negocio; nosotros, de que la tecnología no lo detenga.':'Monitoring, support, backups and a monthly report under a managed plan. You take care of your business; we make sure technology never stops it.',
+        'El punto de partida':'The starting point',
+        'La PyME mexicana aún trabaja con hojas de cálculo':'Mexican SMBs still run on spreadsheets',
+        'Estas cifras son de estudios públicos recientes sobre digitalización de PyMEs en México y América Latina. No son cifras de MSG Monterrey: describen el mercado al que servimos, y por qué el primer paso casi siempre es ordenar lo básico.':'These figures come from recent public studies on SMB digitalization in Mexico and Latin America. They are not MSG Monterrey figures: they describe the market we serve, and why the first step is almost always getting the basics in order.',
+        'de las empresas sigue gestionando su administración con hojas de cálculo manuales':'of companies still manage their administration with manual spreadsheets',
+        'Estudio ASEM / Siigo Aspel, citado por SiliconWeek (2026)':'ASEM / Siigo Aspel study, cited by SiliconWeek (2026)',
+        'usa software especializado para controlar inventarios; solo 22.3% usa software contable':'use specialized software to control inventory; only 22.3% use accounting software',
+        'de las unidades económicas usa servicios en la nube, y apenas 2.1% sistemas de inteligencia artificial':'of economic units use cloud services, and barely 2.1% use artificial intelligence systems',
+        'INEGI, Censos Económicos 2024 (actividad 2023)':'INEGI, Economic Censuses 2024 (2023 activity)',
+        'de las PyMEs de América Latina enfrentó al menos un incidente de ciberseguridad en el último año; el más frecuente fue el phishing, con 20%':'of SMBs in Latin America faced at least one cybersecurity incident in the last year; the most frequent was phishing, at 20%',
+        'Estudio citado por Kaspersky, vía eSemanal (2026)':'Study cited by Kaspersky, via eSemanal (2026)',
+        'MSG Monterrey nace en 2026 como un concepto en creación: construir, desde cero y con las bases correctas, el aliado tecnológico de las PyMEs de Monterrey. Sin trayectoria inventada: con propósito, método y valores definidos desde el primer día.':"MSG Monterrey is born in 2026 as a concept under creation: to build, from scratch and on the right foundations, the technology ally of Monterrey's SMBs. No invented track record: with purpose, method and values defined from day one.",
+        'Propósito':'Purpose',
+        'Que ninguna PyME de Monterrey se quede atrás por no entender o no poder pagar su tecnología: que la tecnología deje de ser un problema y se convierta en su forma de trabajar mejor todos los días.':'That no Monterrey SMB is left behind for not understanding or not being able to afford its technology: that technology stops being a problem and becomes its way of working better every day.',
+        'Misión':'Mission',
+        'Acompañar a los negocios pequeños y medianos de Monterrey en su digitalización con sistemas claros, tecnología protegida y soporte cercano: diagnosticamos, implementamos y cuidamos su operación para que puedan vender, cobrar y administrar sin interrupciones.':"To support Monterrey's small and medium businesses in their digitalization with clear systems, protected technology and close support: we diagnose, implement and look after their operation so they can sell, collect and manage without interruptions.",
+        'Visión':'Vision',
+        'Ser el aliado tecnológico de confianza de las PyMEs del noreste de México: la primera empresa que un dueño de negocio recomienda cuando otro negocio quiere ordenarse, protegerse y crecer con tecnología.':'To be the trusted technology ally of SMBs in northeastern Mexico: the first company a business owner recommends when another business wants to get organized, protected and grow with technology.',
+        'Nuestra ideología, en una frase:':'Our ideology, in one sentence:',
+        'la tecnología de una PyME no debe depender de la suerte ni de una sola persona que “le sabe a las computadoras”':"an SMB's technology must not depend on luck or on a single person who “knows computers”",
+        ': debe estar ordenada, protegida y cuidada por alguien que responde.':': it must be organized, protected and looked after by someone who answers for it.',
+        'Valores':'Values',
+        'Cinco valores, escritos como conductas':'Five values, written as behaviors',
+        'Un valor que no se puede ver en el trabajo diario es solo una frase en la pared. Por eso cada valor de MSG Monterrey dice cómo se ve cuando se cumple — y qué no es.':'A value you cannot see in daily work is just a phrase on the wall. That is why each MSG Monterrey value states what it looks like when upheld — and what it is not.',
+        'Claridad sin tecnicismos':'Clarity without jargon',
+        'Se ve cuando':'You see it when',
+        'cada propuesta dice qué incluye, qué no incluye, cuánto cuesta y en cuánto tiempo, y cada término técnico va explicado por su efecto en el negocio. El cliente puede repetir con sus palabras qué contrató.':'each proposal states what it includes, what it does not include, how much it costs and how long it takes, and every technical term is explained by its effect on the business. The client can repeat in their own words what they hired.',
+        'No es simplificar hasta ocultar riesgos, ni prometer lo que no se puede cumplir.':'It is not simplifying to the point of hiding risks, nor promising what cannot be delivered.',
+        'Prevención antes que reparación':'Prevention before repair',
+        'el monitoreo, los parches y los respaldos se revisan y se reportan aunque “todo esté bien”. El éxito se mide en incidentes evitados, no en visitas de emergencia facturadas.':'monitoring, patches and backups are reviewed and reported even when “everything is fine”. Success is measured in incidents prevented, not in emergency visits billed.',
+        'No es vender miedo, ni cobrar por revisiones que no se hacen.':'It is not selling fear, nor charging for reviews that never happen.',
+        'Un solo responsable':'A single point of accountability',
+        ', si algo falla, el cliente llama a MSG Monterrey y MSG Monterrey coordina con el proveedor que sea — internet, licencias o hardware. Nunca respondemos “eso no es con nosotros” sin una ruta de solución.':', if something fails, the client calls MSG Monterrey and MSG Monterrey coordinates with whichever provider is involved — internet, licenses or hardware. We never answer “that’s not on us” without a path to a solution.',
+        'No es asumir culpas ajenas ni prometer tiempos que dependen de terceros sin decirlo.':'It is not taking blame for others, nor promising timeframes that depend on third parties without saying so.',
+        'Hecho para PyMEs reales':'Made for real SMBs',
+        'proponemos la solución que el negocio necesita y puede pagar y mantener, aunque sea más pequeña que la que podríamos vender. Plazos y pagos pensados para un negocio que no puede parar.':'we propose the solution the business needs and can pay for and maintain, even if it is smaller than what we could sell. Terms and payments designed for a business that cannot stop.',
+        'No es “barato”: es proporcionado. Ni es vender un sistema empresarial a un negocio de cinco personas.':'It is not “cheap”: it is proportionate. Nor is it selling an enterprise system to a five-person business.',
+        'Cercanía local, respuesta en serio':'Local closeness, serious response',
+        'estamos en Monterrey, conocemos el giro del cliente, respondemos en los tiempos escritos y vamos al negocio cuando hace falta. El cliente conoce el nombre de quien lo atiende.':"we are in Monterrey, we know the client's line of business, we respond within the written timeframes and we visit the business when needed. The client knows the name of the person helping them.",
+        'No es informalidad: la cercanía no baja el rigor de los reportes, los respaldos ni los contratos.':'It is not informality: closeness does not lower the rigor of reports, backups or contracts.',
+        'Contacto':'Contact',
+        'Solicita tu diagnóstico':'Request your diagnosis',
+        'Cuéntanos qué te duele hoy en tu negocio. Con eso preparamos el diagnóstico: qué tienes, qué riesgo corres y cuál es el primer paso con mayor impacto — con precio y tiempos por escrito.':'Tell us what hurts in your business today. With that we prepare the diagnosis: what you have, what risk you run and which first step has the greatest impact — with price and timeframes in writing.',
+        'Correo':'Email',
+        'Cobertura':'Coverage',
+        'Monterrey y su área metropolitana, con atención en sitio; soporte remoto para el resto de México.':'Monterrey and its metropolitan area, with on-site service; remote support for the rest of Mexico.',
+        'Primer paso':'First step',
+        'Sesión de descubrimiento para conocer tu caso; el diagnóstico a fondo se cotiza y puede bonificarse si contratas la implementación.':'A discovery session to learn about your case; the in-depth diagnosis is quoted and may be credited if you hire the implementation.',
+        'Cuéntanos tu caso':'Tell us about your case',
+        'Seis datos, nada más. El botón abre tu correo con la solicitud ya redactada.':"Six fields, that's all. The button opens your email app with the request already written.",
+        'Tu nombre':'Your name',
+        'Negocio':'Business',
+        'Giro':'Line of business',
+        'Usuarios / equipos':'Users / devices',
+        '¿Qué te duele hoy?':'What hurts today?',
+        'Teléfono o WhatsApp':'Phone or WhatsApp',
+        'Selecciona…':'Select…',
+        'Comercio / tienda':'Retail / store',
+        'Restaurante / alimentos':'Restaurant / food',
+        'Despacho / servicios profesionales':'Firm / professional services',
+        'Inmobiliaria / administración de rentas':'Real estate / rental management',
+        'Manufactura / taller':'Manufacturing / workshop',
+        'Salud / clínica':'Health / clinic',
+        'Otro':'Other',
+        '1 a 5':'1 to 5',
+        'Más de 30':'More than 30',
+        'Enviar solicitud por correo':'Send request by email',
+        'Se abrió tu aplicación de correo con la solicitud redactada para':'Your email app opened with the request written for',
+        '. Solo falta que la envíes.':". All that's left is to send it.",
+        'Tu negocio digital, sin complicaciones. Sistemas, nube, redes, seguridad, soporte e inteligencia artificial para PyMEs de Monterrey — con un solo responsable.':'Your digital business, made simple. Systems, cloud, networks, security, support and artificial intelligence for Monterrey SMBs — with a single point of accountability.',
+        'Sistemas administrativos y software':'Administrative systems and software',
+        'Páginas web y correo corporativo':'Websites and corporate email',
+        'Nube y servidores virtuales':'Cloud and virtual servers',
+        'Redes, ciberseguridad y respaldos':'Networks, cybersecurity and backups',
+        'Soporte y planes gestionados':'Support and managed plans',
+        'Administración de rentas':'Rental management',
+        'Empresa':'Company',
+        'Nosotros, misión y valores':'About us, mission and values',
+        '© 2026 Multiservicios y Sistemas Generales de Monterrey, S.A.S. de C.V. — Nombre comercial: MSG Monterrey.':'© 2026 Multiservicios y Sistemas Generales de Monterrey, S.A.S. de C.V. — Trade name: MSG Monterrey.',
+        'Monterrey, Nuevo León, México.':'Monterrey, Nuevo León, Mexico.'
+      };
+      var PH_EN = {
+        'Nombre y apellido':'First and last name',
+        'Nombre del negocio':'Business name',
+        'Ej.: facturo a mano, no sé quién me debe, mi sistema se cae, no tengo respaldos…':"E.g.: I invoice by hand, I don't know who owes me, my system crashes, I have no backups…"
+      };
+      var I18N_PT = {
+        'Multiservicios y Sistemas':'Multisserviços e Sistemas',
+        'MULTISERVICIOS Y SISTEMAS':'MULTISSERVIÇOS E SISTEMAS',
+        'Servicios':'Serviços',
+        'Planes':'Planos',
+        'Nosotros':'Sobre nós',
+        'Solicitar diagnóstico':'Solicitar diagnóstico',
+        'Tecnología para PyMEs · Monterrey':'Tecnologia para PMEs · Monterrey',
+        'Tu negocio digital,':'Seu negócio digital,',
+        'sin complicaciones.':'sem complicações.',
+        'Diagnosticamos, implementamos y cuidamos la tecnología de tu negocio: sistemas, nube, redes, seguridad y soporte, explicados en claro y con un solo responsable.':'Diagnosticamos, implantamos e cuidamos da tecnologia do seu negócio: sistemas, nuvem, redes, segurança e suporte, explicados de forma clara e com um único responsável.',
+        'Ver servicios':'Ver serviços',
+        'Servicios gestionados · MSP':'Serviços gerenciados · MSP',
+        'Toda tu tecnología,':'Toda a sua tecnologia,',
+        'con un solo responsable.':'com um único responsável.',
+        'Monitoreamos, respaldamos y damos soporte antes de que algo falle. Tarifa mensual fija y presupuestable, en lugar de cobros sorpresa cada vez que algo se descompone.':'Monitoramos, fazemos backup e damos suporte antes que algo falhe. Mensalidade fixa e previsível, em vez de cobranças surpresa cada vez que algo quebra.',
+        'Ver planes mensuales':'Ver planos mensais',
+        'Cómo trabajamos':'Como trabalhamos',
+        'Sistemas · IA · Rentas':'Sistemas · IA · Aluguéis',
+        'negocios que crecen.':'negócios que crescem.',
+        'Facturación, inventario y cobranza sin hojas de cálculo sueltas; automatización e inteligencia artificial cuando tus datos ya están en orden; y administración de rentas apoyada en tecnología.':'Faturamento, estoque e cobrança sem planilhas soltas; automação e inteligência artificial quando seus dados já estão organizados; e administração de aluguéis apoiada em tecnologia.',
+        'Explorar el portafolio':'Explorar o portfólio',
+        'Conócenos':'Conheça-nos',
+        'Alcance y precio por escrito':'Escopo e preço por escrito',
+        'Sin tecnicismos':'Sem jargões técnicos',
+        'Atención local en Monterrey':'Atendimento local em Monterrey',
+        'Claridad':'Clareza',
+        'Te explicamos tu tecnología en el lenguaje de tu negocio, con alcance y precio por escrito antes de empezar. Nada de acrónimos sin explicar.':'Explicamos sua tecnologia na linguagem do seu negócio, com escopo e preço por escrito antes de começar. Nada de siglas sem explicação.',
+        'Prevención':'Prevenção',
+        'Monitoreamos y respaldamos antes de que algo falle, en lugar de cobrarte por reparar después. El éxito se mide en incidentes evitados.':'Monitoramos e fazemos backup antes que algo falhe, em vez de cobrar pelo reparo depois. O sucesso se mede em incidentes evitados.',
+        'Cercanía local':'Proximidade local',
+        'Estamos en Monterrey, respondemos en tus horarios y podemos ir a tu negocio. No es un centro de atención en otro país: conoces el nombre de quien te atiende.':'Estamos em Monterrey, respondemos nos seus horários e podemos ir ao seu negócio. Não é uma central de atendimento em outro país: você sabe o nome de quem te atende.',
+        'Portafolio de servicios':'Portfólio de serviços',
+        'Todo lo que tu negocio necesita de tecnología, en un solo lugar':'Tudo o que seu negócio precisa em tecnologia, em um só lugar',
+        'Diez líneas de servicio que se combinan según lo que tu negocio necesita hoy. Toca cada una para ver qué incluye, para quién es, cómo se cobra y qué no incluye — sin letras chicas.':'Dez linhas de serviço que se combinam conforme o que seu negócio precisa hoje. Toque em cada uma para ver o que inclui, para quem é, como é cobrado e o que não inclui — sem letras miúdas.',
+        '¿Administras rentas? Esto es para ti':'Você administra aluguéis? Isto é para você',
+        'La administración de rentas es un servicio administrativo apoyado en tecnología, distinto a la TI tradicional: su lenguaje es ocupación, cobranza y reportes claros para el propietario. MSG Monterrey puede darte el sistema para operarlo tú, u operar la administración por ti mes a mes.':'A administração de aluguéis é um serviço administrativo apoiado em tecnologia, diferente da TI tradicional: sua linguagem é ocupação, cobrança e relatórios claros para o proprietário. A MSG Monterrey pode lhe dar o sistema para você operar, ou operar a administração por você mês a mês.',
+        'Contratos, cargos recurrentes, pagos y saldos por inmueble':'Contratos, cobranças recorrentes, pagamentos e saldos por imóvel',
+        'Facturación CFDI en cada pago y estados de cuenta':'Faturamento CFDI em cada pagamento e extratos de conta',
+        'Portal para inquilinos y reportes para propietarios':'Portal para inquilinos e relatórios para proprietários',
+        'Seguimiento de mantenimiento y gastos por inmueble':'Acompanhamento de manutenção e despesas por imóvel',
+        'Nota de alcance: en sistemas de terceros (Microsoft 365, CONTPAQi, Aspel y otros), MSG Monterrey implementa, integra, administra y da soporte; no es el fabricante del sistema. En contratos de arrendamiento y temas legales o fiscales, MSG Monterrey aporta la tecnología y el flujo: la validez legal la valida asesoría especializada en Nuevo León.':'Nota de escopo: em sistemas de terceiros (Microsoft 365, CONTPAQi, Aspel e outros), a MSG Monterrey implanta, integra, administra e dá suporte; não é a fabricante do sistema. Em contratos de locação e temas legais ou fiscais, a MSG Monterrey fornece a tecnologia e o fluxo: a validade legal é confirmada por assessoria especializada em Nuevo León.',
+        'Servicios gestionados':'Serviços gerenciados',
+        'De reparar cuando se rompe, a prevenir para que no se pare':'De reparar quando quebra, a prevenir para não parar',
+        'El modelo tradicional cobra por visita y gana cuando algo falla. El modelo gestionado cobra una tarifa mensual fija y gana cuando nada falla. Esta es la diferencia:':'O modelo tradicional cobra por visita e ganha quando algo falha. O modelo gerenciado cobra uma mensalidade fixa e ganha quando nada falha. Esta é a diferença:',
+        'Soporte tradicional (reactivo)':'Suporte tradicional (reativo)',
+        'Llamas cuando algo ya se descompuso.':'Você liga quando algo já quebrou.',
+        'Costo impredecible: cada visita es un cobro nuevo':'Custo imprevisível: cada visita é uma cobrança nova',
+        'Nadie revisa respaldos hasta que se necesitan':'Ninguém verifica os backups até precisar deles',
+        'Cada problema es con un proveedor distinto':'Cada problema é com um fornecedor diferente',
+        'El negocio se detiene mientras se resuelve':'O negócio para enquanto se resolve',
+        'Servicios gestionados con MSG Monterrey':'Serviços gerenciados com a MSG Monterrey',
+        '¿Por qué esperar a que algo se rompa si se puede evitar la caída antes de que ocurra?':'Por que esperar algo quebrar se a queda pode ser evitada antes de acontecer?',
+        'Tarifa mensual fija y presupuestable':'Mensalidade fixa e previsível',
+        'Monitoreo, parches y respaldos verificados de forma continua':'Monitoramento, correções e backups verificados de forma contínua',
+        'Un solo responsable que coordina con todos los proveedores':'Um único responsável que coordena com todos os fornecedores',
+        'Reporte mensual: qué se hizo, qué se evitó y qué sigue':'Relatório mensal: o que foi feito, o que foi evitado e o que vem a seguir',
+        'Esencial':'Essencial',
+        'Que no se pare':'Para não parar',
+        'Para negocios de 1 a 10 usuarios que hoy no tienen a nadie de TI.':'Para negócios de 1 a 10 usuários que hoje não têm ninguém de TI.',
+        'Soporte remoto en horario hábil por ticket, WhatsApp o correo':'Suporte remoto em horário comercial por chamado, WhatsApp ou e-mail',
+        'Monitoreo básico de equipos críticos':'Monitoramento básico de equipamentos críticos',
+        'Parches y antivirus básico':'Correções e antivírus básico',
+        'Verificación mensual de respaldos':'Verificação mensal de backups',
+        'Gestión básica de accesos y cuentas':'Gestão básica de acessos e contas',
+        'Informe mensual de actividades':'Relatório mensal de atividades',
+        'Cotización según diagnóstico':'Orçamento conforme diagnóstico',
+        'Mensual, por equipo o usuario':'Mensal, por equipamento ou usuário',
+        'El más contratado':'O mais contratado',
+        'Profesional':'Profissional',
+        'Operación cuidada':'Operação cuidada',
+        'Para PyMEs de 10 a 30 usuarios que dependen de sus sistemas todos los días.':'Para PMEs de 10 a 30 usuários que dependem dos seus sistemas todos os dias.',
+        'Todo lo del plan Esencial':'Tudo do plano Essencial',
+        'Soporte prioritario y visitas programadas':'Suporte prioritário e visitas programadas',
+        'Monitoreo 24/7 y parches automatizados':'Monitoramento 24/7 e correções automatizadas',
+        'Respaldos gestionados y verificados':'Backups gerenciados e verificados',
+        'Administración de Microsoft 365 / Google Workspace':'Administração de Microsoft 365 / Google Workspace',
+        'Doble autenticación y diagnóstico de riesgos':'Autenticação de dois fatores e diagnóstico de riscos',
+        'Informe mensual y revisión trimestral':'Relatório mensal e revisão trimestral',
+        'Tecnología delegada':'Tecnologia delegada',
+        'Para empresas que quieren delegar toda su TI y su seguridad en un solo proveedor.':'Para empresas que querem delegar toda a sua TI e segurança a um único fornecedor.',
+        'Todo lo del plan Profesional':'Tudo do plano Profissional',
+        'Atención prioritaria y responsable asignado':'Atendimento prioritário e responsável designado',
+        'Plan de recuperación probado, con tiempos escritos':'Plano de recuperação testado, com prazos por escrito',
+        'Administración completa de nube, identidades y accesos':'Administração completa de nuvem, identidades e acessos',
+        'Seguridad gestionada: protección avanzada, firewall administrado y capacitación anti-phishing':'Segurança gerenciada: proteção avançada, firewall administrado e treinamento antiphishing',
+        'Reunión de revisión y ruta de mejora anual':'Reunião de revisão e plano anual de melhoria',
+        'Mensual, a la medida por alcance':'Mensal, sob medida conforme escopo',
+        'Los tiempos de primera respuesta y de resolución se definen por escrito en el acuerdo de servicio de cada plan, según el diagnóstico inicial. Sin diagnóstico previo no vendemos póliza: no heredamos problemas que no conocemos.':'Os tempos de primeira resposta e de resolução são definidos por escrito no contrato de serviço de cada plano, conforme o diagnóstico inicial. Sem diagnóstico prévio não vendemos plano: não herdamos problemas que não conhecemos.',
+        'Cuatro pasos, todos por escrito':'Quatro passos, todos por escrito',
+        'Empezamos por un resultado visible en pocas semanas — una página web con correo corporativo, un respaldo verificado o salir de la hoja de cálculo — y de ahí construimos la relación.':'Começamos por um resultado visível em poucas semanas — um site com e-mail corporativo, um backup verificado ou sair da planilha — e a partir daí construímos a relação.',
+        'Revisamos infraestructura, sistemas, seguridad, respaldos y costos de licencias. Recibes un reporte escrito con prioridades por riesgo e impacto.':'Revisamos infraestrutura, sistemas, segurança, backups e custos de licenças. Você recebe um relatório escrito com prioridades por risco e impacto.',
+        'Propuesta por escrito':'Proposta por escrito',
+        'Qué incluye, qué no incluye, cuánto cuesta y en cuánto tiempo. Con ruta por etapas: qué primero, qué después y qué no hace falta todavía.':'O que inclui, o que não inclui, quanto custa e em quanto tempo. Com roteiro por etapas: o que vem primeiro, o que vem depois e o que ainda não é necessário.',
+        'Implementación':'Implantação',
+        'Instalamos, migramos y configuramos con capacitación a tu equipo y documentación entregada. Ningún sistema nuevo se entrega sin respaldo verificado.':'Instalamos, migramos e configuramos com treinamento da sua equipe e documentação entregue. Nenhum sistema novo é entregue sem backup verificado.',
+        'Cuidado mensual':'Cuidado mensal',
+        'Monitoreo, soporte, respaldos y reporte mensual bajo un plan gestionado. Tú te ocupas de tu negocio; nosotros, de que la tecnología no lo detenga.':'Monitoramento, suporte, backups e relatório mensal sob um plano gerenciado. Você cuida do seu negócio; nós, de que a tecnologia não o pare.',
+        'El punto de partida':'O ponto de partida',
+        'La PyME mexicana aún trabaja con hojas de cálculo':'A PME mexicana ainda trabalha com planilhas',
+        'Estas cifras son de estudios públicos recientes sobre digitalización de PyMEs en México y América Latina. No son cifras de MSG Monterrey: describen el mercado al que servimos, y por qué el primer paso casi siempre es ordenar lo básico.':'Estes números são de estudos públicos recentes sobre digitalização de PMEs no México e na América Latina. Não são números da MSG Monterrey: descrevem o mercado que atendemos, e por que o primeiro passo quase sempre é organizar o básico.',
+        'de las empresas sigue gestionando su administración con hojas de cálculo manuales':'das empresas ainda gerenciam sua administração com planilhas manuais',
+        'Estudio ASEM / Siigo Aspel, citado por SiliconWeek (2026)':'Estudo ASEM / Siigo Aspel, citado por SiliconWeek (2026)',
+        'usa software especializado para controlar inventarios; solo 22.3% usa software contable':'usa software especializado para controlar estoques; apenas 22,3% usa software contábil',
+        'de las unidades económicas usa servicios en la nube, y apenas 2.1% sistemas de inteligencia artificial':'das unidades econômicas usa serviços em nuvem, e apenas 2,1% sistemas de inteligência artificial',
+        'INEGI, Censos Económicos 2024 (actividad 2023)':'INEGI, Censos Econômicos 2024 (atividade 2023)',
+        'de las PyMEs de América Latina enfrentó al menos un incidente de ciberseguridad en el último año; el más frecuente fue el phishing, con 20%':'das PMEs da América Latina enfrentaram pelo menos um incidente de cibersegurança no último ano; o mais frequente foi o phishing, com 20%',
+        'Estudio citado por Kaspersky, vía eSemanal (2026)':'Estudo citado pela Kaspersky, via eSemanal (2026)',
+        '76.3%':'76,3%',
+        'MSG Monterrey nace en 2026 como un concepto en creación: construir, desde cero y con las bases correctas, el aliado tecnológico de las PyMEs de Monterrey. Sin trayectoria inventada: con propósito, método y valores definidos desde el primer día.':'A MSG Monterrey nasce em 2026 como um conceito em criação: construir, do zero e com as bases corretas, o aliado tecnológico das PMEs de Monterrey. Sem trajetória inventada: com propósito, método e valores definidos desde o primeiro dia.',
+        'Que ninguna PyME de Monterrey se quede atrás por no entender o no poder pagar su tecnología: que la tecnología deje de ser un problema y se convierta en su forma de trabajar mejor todos los días.':'Que nenhuma PME de Monterrey fique para trás por não entender ou não poder pagar sua tecnologia: que a tecnologia deixe de ser um problema e se torne sua forma de trabalhar melhor todos os dias.',
+        'Misión':'Missão',
+        'Acompañar a los negocios pequeños y medianos de Monterrey en su digitalización con sistemas claros, tecnología protegida y soporte cercano: diagnosticamos, implementamos y cuidamos su operación para que puedan vender, cobrar y administrar sin interrupciones.':'Acompanhar os pequenos e médios negócios de Monterrey em sua digitalização com sistemas claros, tecnologia protegida e suporte próximo: diagnosticamos, implantamos e cuidamos da sua operação para que possam vender, cobrar e administrar sem interrupções.',
+        'Visión':'Visão',
+        'Ser el aliado tecnológico de confianza de las PyMEs del noreste de México: la primera empresa que un dueño de negocio recomienda cuando otro negocio quiere ordenarse, protegerse y crecer con tecnología.':'Ser o aliado tecnológico de confiança das PMEs do nordeste do México: a primeira empresa que um dono de negócio recomenda quando outro negócio quer se organizar, se proteger e crescer com tecnologia.',
+        'Nuestra ideología, en una frase:':'Nossa ideologia, em uma frase:',
+        'la tecnología de una PyME no debe depender de la suerte ni de una sola persona que “le sabe a las computadoras”':'a tecnologia de uma PME não deve depender da sorte nem de uma única pessoa que “entende de computadores”',
+        ': debe estar ordenada, protegida y cuidada por alguien que responde.':': deve estar organizada, protegida e cuidada por alguém que responde por ela.',
+        'Cinco valores, escritos como conductas':'Cinco valores, escritos como condutas',
+        'Un valor que no se puede ver en el trabajo diario es solo una frase en la pared. Por eso cada valor de MSG Monterrey dice cómo se ve cuando se cumple — y qué no es.':'Um valor que não se pode ver no trabalho diário é só uma frase na parede. Por isso cada valor da MSG Monterrey diz como ele se parece quando é cumprido — e o que ele não é.',
+        'Claridad sin tecnicismos':'Clareza sem jargões',
+        'Se ve cuando':'Vê-se quando',
+        'cada propuesta dice qué incluye, qué no incluye, cuánto cuesta y en cuánto tiempo, y cada término técnico va explicado por su efecto en el negocio. El cliente puede repetir con sus palabras qué contrató.':'cada proposta diz o que inclui, o que não inclui, quanto custa e em quanto tempo, e cada termo técnico é explicado pelo seu efeito no negócio. O cliente pode repetir com suas palavras o que contratou.',
+        'No es simplificar hasta ocultar riesgos, ni prometer lo que no se puede cumplir.':'Não é simplificar até ocultar riscos, nem prometer o que não se pode cumprir.',
+        'Prevención antes que reparación':'Prevenção antes do reparo',
+        'el monitoreo, los parches y los respaldos se revisan y se reportan aunque “todo esté bien”. El éxito se mide en incidentes evitados, no en visitas de emergencia facturadas.':'o monitoramento, as correções e os backups são revisados e relatados mesmo que “esteja tudo bem”. O sucesso se mede em incidentes evitados, não em visitas de emergência faturadas.',
+        'No es vender miedo, ni cobrar por revisiones que no se hacen.':'Não é vender medo, nem cobrar por revisões que não são feitas.',
+        'Un solo responsable':'Um único responsável',
+        ', si algo falla, el cliente llama a MSG Monterrey y MSG Monterrey coordina con el proveedor que sea — internet, licencias o hardware. Nunca respondemos “eso no es con nosotros” sin una ruta de solución.':', se algo falha, o cliente liga para a MSG Monterrey e a MSG Monterrey coordena com o fornecedor que for — internet, licenças ou hardware. Nunca respondemos “isso não é conosco” sem um caminho de solução.',
+        'No es asumir culpas ajenas ni prometer tiempos que dependen de terceros sin decirlo.':'Não é assumir culpas alheias nem prometer prazos que dependem de terceiros sem avisar.',
+        'Hecho para PyMEs reales':'Feito para PMEs reais',
+        'proponemos la solución que el negocio necesita y puede pagar y mantener, aunque sea más pequeña que la que podríamos vender. Plazos y pagos pensados para un negocio que no puede parar.':'propomos a solução que o negócio precisa e pode pagar e manter, mesmo que seja menor do que a que poderíamos vender. Prazos e pagamentos pensados para um negócio que não pode parar.',
+        'No es “barato”: es proporcionado. Ni es vender un sistema empresarial a un negocio de cinco personas.':'Não é “barato”: é proporcional. Nem é vender um sistema empresarial a um negócio de cinco pessoas.',
+        'Cercanía local, respuesta en serio':'Proximidade local, resposta a sério',
+        'estamos en Monterrey, conocemos el giro del cliente, respondemos en los tiempos escritos y vamos al negocio cuando hace falta. El cliente conoce el nombre de quien lo atiende.':'estamos em Monterrey, conhecemos o ramo do cliente, respondemos nos prazos escritos e vamos ao negócio quando necessário. O cliente sabe o nome de quem o atende.',
+        'No es informalidad: la cercanía no baja el rigor de los reportes, los respaldos ni los contratos.':'Não é informalidade: a proximidade não reduz o rigor dos relatórios, dos backups nem dos contratos.',
+        'Contacto':'Contato',
+        'Solicita tu diagnóstico':'Solicite seu diagnóstico',
+        'Cuéntanos qué te duele hoy en tu negocio. Con eso preparamos el diagnóstico: qué tienes, qué riesgo corres y cuál es el primer paso con mayor impacto — con precio y tiempos por escrito.':'Conte-nos o que dói hoje no seu negócio. Com isso preparamos o diagnóstico: o que você tem, qual risco corre e qual é o primeiro passo de maior impacto — com preço e prazos por escrito.',
+        'Correo':'E-mail',
+        'Monterrey y su área metropolitana, con atención en sitio; soporte remoto para el resto de México.':'Monterrey e sua região metropolitana, com atendimento no local; suporte remoto para o resto do México.',
+        'Primer paso':'Primeiro passo',
+        'Sesión de descubrimiento para conocer tu caso; el diagnóstico a fondo se cotiza y puede bonificarse si contratas la implementación.':'Sessão de descoberta para conhecer seu caso; o diagnóstico completo é orçado e pode ser abatido se você contratar a implantação.',
+        'Cuéntanos tu caso':'Conte-nos seu caso',
+        'Seis datos, nada más. El botón abre tu correo con la solicitud ya redactada.':'Seis dados, nada mais. O botão abre seu e-mail com a solicitação já redigida.',
+        'Tu nombre':'Seu nome',
+        'Negocio':'Negócio',
+        'Giro':'Ramo',
+        'Usuarios / equipos':'Usuários / equipamentos',
+        '¿Qué te duele hoy?':'O que dói hoje?',
+        'Teléfono o WhatsApp':'Telefone ou WhatsApp',
+        'Selecciona…':'Selecione…',
+        'Comercio / tienda':'Comércio / loja',
+        'Despacho / servicios profesionales':'Escritório / serviços profissionais',
+        'Inmobiliaria / administración de rentas':'Imobiliária / administração de aluguéis',
+        'Manufactura / taller':'Manufatura / oficina',
+        'Salud / clínica':'Saúde / clínica',
+        'Otro':'Outro',
+        'Más de 30':'Mais de 30',
+        'Enviar solicitud por correo':'Enviar solicitação por e-mail',
+        'Se abrió tu aplicación de correo con la solicitud redactada para':'Seu aplicativo de e-mail abriu com a solicitação redigida para',
+        '. Solo falta que la envíes.':'. Só falta você enviá-la.',
+        'Tu negocio digital, sin complicaciones. Sistemas, nube, redes, seguridad, soporte e inteligencia artificial para PyMEs de Monterrey — con un solo responsable.':'Seu negócio digital, sem complicações. Sistemas, nuvem, redes, segurança, suporte e inteligência artificial para PMEs de Monterrey — com um único responsável.',
+        'Sistemas administrativos y software':'Sistemas administrativos e software',
+        'Páginas web y correo corporativo':'Sites e e-mail corporativo',
+        'Nube y servidores virtuales':'Nuvem e servidores virtuais',
+        'Redes, ciberseguridad y respaldos':'Redes, cibersegurança e backups',
+        'Soporte y planes gestionados':'Suporte e planos gerenciados',
+        'Administración de rentas':'Administração de aluguéis',
+        'Nosotros, misión y valores':'Sobre nós, missão e valores',
+        '© 2026 Multiservicios y Sistemas Generales de Monterrey, S.A.S. de C.V. — Nombre comercial: MSG Monterrey.':'© 2026 Multiservicios y Sistemas Generales de Monterrey, S.A.S. de C.V. — Nome comercial: MSG Monterrey.'
+      };
+      var PH_PT = {
+        'Nombre y apellido':'Nome e sobrenome',
+        'Nombre del negocio':'Nome do negócio',
+        'Ej.: facturo a mano, no sé quién me debe, mi sistema se cae, no tengo respaldos…':'Ex.: faturo à mão, não sei quem me deve, meu sistema cai, não tenho backups…'
+      };
+      var SVC_UI = {
+        es:{ includes:'Qué incluye', who:'Para quién', not:'Qué no incluye', charge:'Cómo se cobra:' },
+        en:{ includes:"What's included", who:"Who it's for", not:"What's not included", charge:"How it's charged:" },
+        pt:{ includes:'O que inclui', who:'Para quem', not:'O que não inclui', charge:'Como é cobrado:' }
+      };
+      var SERVICES_EN = [
+        { icon:'diag', title:'Technology diagnosis & consulting',
+          line:'The entry point: knowing exactly where you stand before spending a single peso.',
+          includes:['Technology diagnosis of infrastructure, systems, security, backups and licenses, with a written report','Staged digital roadmap: what comes first, what comes next and what is not needed yet','Consulting on digital transformation, cloud and license costs','Training for your team on the systems implemented and on basic security'],
+          who:'Any business that today depends on “the person who knows computers”.',
+          charge:'One-off project; may be credited if you hire the implementation.',
+          not:'It does not include the implementation itself: that is quoted separately, in writing.' },
+        { icon:'soft', title:'Administrative / accounting software & systems',
+          line:'Billing, inventory and collections without loose spreadsheets.',
+          includes:['Implementation and support of administrative systems and ERPs sized to you (Mexican platforms aligned with the SAT, widely used by SMBs)','CFDI 4.0 electronic invoicing, payment complements and stamped payroll','Inventory, point of sale and purchasing integrated with accounting','CRM for sales and client follow-up, integrated with WhatsApp and your website','Custom software when no standard system is enough','Data migration from Excel or previous systems, with data cleanup'],
+          who:'Businesses that invoice, record or control inventory by hand.',
+          charge:'Per project, with fixed scope, deliverables and date; optional monthly support plan.',
+          not:'We are not the manufacturer of third-party systems: we implement, integrate and support them.' },
+        { icon:'web', title:'Websites & digital presence',
+          line:'The most visible service, and the one that builds trust fastest.',
+          includes:['Informational page, corporate site or online store with payments and inventory','Domain, managed hosting and corporate email on your own domain (Microsoft 365 / Google Workspace)','Security certificate (SSL) and site backups','Google business profile, analytics and basic SEO'],
+          who:'Businesses that today only exist on social media or use free email.',
+          charge:'One-off project + monthly maintenance (updates, backups and minor changes).',
+          not:'We do not promise “ranking first on Google”: advanced SEO is a separate service.' },
+        { icon:'cloud', title:'Virtual servers, cloud & cloud infrastructure',
+          line:'Your systems accessible and protected, without buying servers that fall short.',
+          includes:['Virtual servers (VPS) and managed Windows/Linux servers: setup, patching, monitoring and backup','Gradual cloud migration and hybrid architecture: what belongs on site stays on site','Management of Azure, AWS and Google Cloud environments, with usage reports','Cloud productivity: email, shared files, permissions and version control'],
+          who:'Businesses that share files by USB or depend on a single “server” computer.',
+          charge:'Monthly administration subscription + provider cloud usage at cost, with a report.',
+          not:'Provider cloud usage is not included in the administration fee: it is reported every month.' },
+        { icon:'net', title:'Networks & IT infrastructure',
+          line:'Internet that does not go down, WiFi without blind spots and a documented network.',
+          includes:['Certified Cat6/Cat6A structured cabling and fiber-optic links','Business WiFi: designed coverage, separate guest network and centralized monitoring','Configured switches, routers and firewalls: segmentation, VPN between branches and quality of service','IP telephony and videoconferencing integrated into your network','On-site servers, virtualization and power backup (UPS)'],
+          who:'Offices, stores and warehouses where “the internet is down” is an everyday phrase.',
+          charge:'Installation project + preventive maintenance plan.',
+          not:'Every installation is delivered with an up-to-date network diagram: a network without a diagram is not a finished deliverable.' },
+        { icon:'shield', title:'Cybersecurity',
+          line:'Security designed into every project, not bolted on at the end.',
+          includes:['Device and email protection: advanced business antivirus, anti-phishing and filtering','Firewall, secure VPN, two-factor authentication (MFA) and least-privilege access control','Risk assessment, vulnerability analysis and server hardening','Anti-phishing training for all staff, not just IT','Incident response: containment, cleanup, recovery and lessons learned'],
+          who:'Any business handling client data, invoicing or online banking.',
+          charge:'Assessment per project + monthly managed security.',
+          not:'We advise on technology and data-protection best practices; legal documents are reviewed by a lawyer.' },
+        { icon:'support', title:'Technical support & managed services (MSP)',
+          line:'Your external IT department: proactive, with written response times.',
+          includes:['Remote and on-site help desk by ticket, WhatsApp or email, with defined response times','24/7 monitoring of servers, devices, network and critical services, with proactive alerts','Automated patching and updates; inventory of equipment and licenses','User onboarding and offboarding: accounts, emails and permissions','Monthly report of activities, incidents and backups, with a review meeting'],
+          who:'SMBs that cannot stop because “the system went down”. See monthly plans.',
+          charge:'Monthly subscription per user/device or flat fee by scope.',
+          not:"Exact times are set in writing in your plan's service agreement." },
+        { icon:'backup', title:'Backups & business continuity',
+          line:'A backup that has never been restore-tested is not a backup.',
+          includes:['Automatic, encrypted backup of servers, devices, databases and email','3-2-1 rule: several copies, in different places, with at least one that ransomware cannot encrypt','Periodic verification that the backup can actually be restored','Recovery plan with written objectives: how much data you can lose and how fast you are back up'],
+          who:'Businesses that would lose days of work — or the business — if their information were encrypted tomorrow.',
+          charge:'Included in higher managed plans; also as a standalone service by volume.',
+          not:'We promise restore times and tests, not impossibilities: no system guarantees that data will never be lost.' },
+        { icon:'ai', title:'Artificial intelligence & automation',
+          line:'First we organize your data and processes; then AI works on its own.',
+          includes:['Automation diagnosis: which processes repeat the most hours and errors, prioritized by return','AI chatbots and agents on WhatsApp and web that query your system and act: stock, quotes, follow-up','Automation of administrative tasks: reading invoices and documents, data entry, reconciliation and reminders','Data dashboards, sales and inventory forecasts and internal assistants with your documents','Adoption of copilots (Microsoft Copilot and equivalents) with data governance and training'],
+          who:'Businesses with tidy processes that lose hours on manual entry and follow-up.',
+          charge:'Diagnosis + project per process + monthly maintenance so the agent does not degrade.',
+          not:'AI without tidy data and without a process owner fails: if needed, the tidying phase is included, in writing.' },
+        { icon:'rent', title:'Rental management & administrative services',
+          line:'Our signature service: managing rentals with a system, not notebooks.',
+          includes:['Rental system: properties, contracts with terms and conditions, deposits and commissions','Collections: recurring charges, payments, balances, alerts and reports on overdue rent and occupancy','CFDI invoicing on every payment and a tenant portal to pay and check','Owner portal: income, occupancy, expenses and profit','Managed service: MSG Monterrey runs collections and reports for you, month by month','Digitization of files and recurring-collection control for other services'],
+          who:'Owners, real-estate agencies and condo managers with a growing portfolio.',
+          charge:'Initial implementation + subscription per number of properties or portfolio managed.',
+          not:'MSG Monterrey provides the technology and the workflow; the legal validity of contracts is confirmed by legal counsel in each state. We do not offer accounting or tax advice: we organize the information for your accountant.' }
+      ];
+      var SERVICES_PT = [
+        { icon:'diag', title:'Diagnóstico e consultoria de tecnologia',
+          line:'A porta de entrada: saber exatamente onde você está antes de gastar um real.',
+          includes:['Diagnóstico de infraestrutura, sistemas, segurança, backups e licenças, com relatório escrito','Roteiro digital por etapas: o que vem primeiro, o que vem depois e o que ainda não é necessário','Consultoria em transformação digital, nuvem e custos de licenças','Treinamento da sua equipe nos sistemas implantados e em segurança básica'],
+          who:'Todo negócio que hoje depende de “a pessoa que entende de computadores”.',
+          charge:'Projeto único; pode ser abatido se você contratar a implantação.',
+          not:'Não inclui a implantação em si: ela é orçada à parte, por escrito.' },
+        { icon:'soft', title:'Software e sistemas administrativos / contábeis',
+          line:'Faturamento, estoque e cobrança sem planilhas soltas.',
+          includes:['Implantação e suporte de sistemas administrativos e ERP conforme seu tamanho (plataformas mexicanas ajustadas ao SAT, de uso amplo em PMEs)','Faturamento eletrônico CFDI 4.0, complemento de pagamentos e folha timbrada','Estoque, ponto de venda e compras integrados à contabilidade','CRM para vendas e acompanhamento de clientes, integrado ao WhatsApp e ao seu site','Software sob medida quando nenhum sistema padrão resolve','Migração de dados do Excel ou de sistemas anteriores, com limpeza de dados'],
+          who:'Negócios que faturam, registram ou controlam estoque à mão.',
+          charge:'Por projeto, com escopo fechado, entregas e data; plano de suporte mensal opcional.',
+          not:'Não somos os fabricantes dos sistemas de terceiros: nós os implantamos, integramos e damos suporte.' },
+        { icon:'web', title:'Sites e presença digital',
+          line:'O serviço mais visível e o que mais rápido gera confiança.',
+          includes:['Página informativa, site corporativo ou loja online com pagamentos e estoque','Domínio, hospedagem administrada e e-mail corporativo com seu próprio domínio (Microsoft 365 / Google Workspace)','Certificado de segurança (SSL) e backups do site','Perfil de empresa no Google, analítica e posicionamento básico'],
+          who:'Negócios que hoje só existem nas redes sociais ou com e-mail gratuito.',
+          charge:'Projeto único + manutenção mensal (atualizações, backups e pequenas alterações).',
+          not:'Não prometemos “aparecer primeiro no Google”: o posicionamento avançado é um serviço à parte.' },
+        { icon:'cloud', title:'Servidores virtuais, nuvem e infraestrutura cloud',
+          line:'Seus sistemas acessíveis e protegidos, sem comprar servidores que ficam pequenos.',
+          includes:['Servidores virtuais (VPS) e servidores administrados Windows/Linux: configuração, correções, monitoramento e backup','Migração gradual para a nuvem e arquitetura híbrida: o que convém no local fica no local','Administração de ambientes Azure, AWS e Google Cloud, com relatório de consumo','Produtividade na nuvem: e-mail, arquivos compartilhados, permissões e controle de versões'],
+          who:'Negócios que compartilham arquivos por USB ou dependem de um único computador “servidor”.',
+          charge:'Assinatura mensal de administração + consumo de nuvem do fornecedor a custo, com relatório.',
+          not:'O consumo do fornecedor de nuvem não está incluído na administração: é relatado todo mês.' },
+        { icon:'net', title:'Redes e infraestrutura de TI',
+          line:'Internet que não cai, WiFi sem pontos cegos e uma rede documentada.',
+          includes:['Cabeamento estruturado Cat6/Cat6A certificado e fibra óptica para enlaces','WiFi empresarial: cobertura projetada, rede de convidados separada e monitoramento centralizado','Switches, roteadores e firewalls configurados: segmentação, VPN entre filiais e qualidade de serviço','Telefonia IP e videoconferência integradas à sua rede','Servidores locais, virtualização e backup elétrico (UPS)'],
+          who:'Escritórios, lojas e galpões onde “a internet caiu” é frase de todos os dias.',
+          charge:'Projeto de instalação + plano de manutenção preventiva.',
+          not:'Toda instalação é entregue com diagrama de rede atualizado: uma rede sem diagrama não é uma entrega concluída.' },
+        { icon:'shield', title:'Cibersegurança',
+          line:'Segurança desde o desenho de cada projeto, não como acréscimo no final.',
+          includes:['Proteção de equipamentos e e-mail: antivírus empresarial avançado, antiphishing e filtragem','Firewall, VPN segura, autenticação de dois fatores (MFA) e controle de acessos com privilégio mínimo','Diagnóstico de riscos, análise de vulnerabilidades e endurecimento de servidores','Treinamento antiphishing para todo o pessoal, não só para a TI','Resposta a incidentes: contenção, limpeza, recuperação e lições aprendidas'],
+          who:'Todo negócio que lide com dados de clientes, faturamento ou banco online.',
+          charge:'Diagnóstico por projeto + segurança gerenciada mensal.',
+          not:'Orientamos no tecnológico e em boas práticas de proteção de dados; os documentos legais são revisados por um advogado.' },
+        { icon:'support', title:'Suporte técnico e serviços gerenciados (MSP)',
+          line:'Seu departamento de TI externo: proativo, com prazos por escrito.',
+          includes:['Central de ajuda remota e no local por chamado, WhatsApp ou e-mail, com tempos de resposta definidos','Monitoramento 24/7 de servidores, equipamentos, rede e serviços críticos, com alertas proativos','Correções e atualizações automatizadas; inventário de equipamentos e licenças','Admissões e desligamentos de usuários, e-mails e permissões','Relatório mensal de atividades, incidentes e backups, com reunião de revisão'],
+          who:'PMEs que não podem parar porque “o sistema caiu”. Veja os planos mensais.',
+          charge:'Assinatura mensal por usuário/equipamento ou tarifa fixa por escopo.',
+          not:'Os prazos exatos são fixados por escrito no contrato de serviço do seu plano.' },
+        { icon:'backup', title:'Backups e continuidade do negócio',
+          line:'Um backup que nunca foi restaurado para teste, não é um backup.',
+          includes:['Backup automático e criptografado de servidores, equipamentos, bancos de dados e e-mail','Regra 3-2-1: várias cópias, em lugares diferentes, com pelo menos uma que o ransomware não possa criptografar','Verificação periódica de que o backup pode mesmo ser restaurado','Plano de recuperação com objetivos escritos: quantos dados se pode perder e em quanto tempo você volta a operar'],
+          who:'Negócios que perderiam dias de trabalho — ou o negócio — se amanhã suas informações fossem criptografadas.',
+          charge:'Incluído nos planos gerenciados superiores; também como serviço independente por volume.',
+          not:'Prometemos prazos e testes de restauração, não impossíveis: nenhum sistema garante que um dado nunca será perdido.' },
+        { icon:'ai', title:'Inteligência artificial e automação',
+          line:'Primeiro organizamos seus dados e processos; depois, a IA trabalha sozinha.',
+          includes:['Diagnóstico de automação: quais processos repetem mais horas e erros, priorizados por retorno','Chatbots e agentes de IA no WhatsApp e na web que consultam seu sistema e executam: estoque, orçamentos, acompanhamento','Automação de tarefas administrativas: leitura de faturas e documentos, digitação, conciliação e lembretes','Painéis de dados, previsões de vendas e estoque e assistentes internos com seus documentos','Adoção de copilotos (Microsoft Copilot e equivalentes) com governança de dados e treinamento'],
+          who:'Negócios com processos organizados que perdem horas em digitação e acompanhamento manual.',
+          charge:'Diagnóstico + projeto por processo + manutenção mensal para o agente não se degradar.',
+          not:'A IA sem dados organizados e sem um responsável pelo processo fracassa: se necessário, a fase de organização está incluída e por escrito.' },
+        { icon:'rent', title:'Administração de aluguéis e serviços administrativos',
+          line:'Nosso serviço distintivo: administrar aluguéis com sistema, não com cadernos.',
+          includes:['Sistema de aluguéis: imóveis, contratos com vigências e condições, depósitos e comissões','Cobrança: cobranças recorrentes, pagamentos, saldos, alertas e relatórios de aluguéis vencidos e ocupação','Faturamento CFDI em cada pagamento e portal do inquilino para pagar e consultar','Portal do proprietário: receitas, ocupação, despesas e lucro','Serviço gerenciado: a MSG Monterrey opera a cobrança e os relatórios por você, mês a mês','Digitalização de expedientes e controle de cobrança recorrente de outros serviços'],
+          who:'Proprietários, imobiliárias e administradores de condomínios com carteira crescente.',
+          charge:'Implantação inicial + assinatura por número de imóveis ou carteira administrada.',
+          not:'A MSG Monterrey fornece a tecnologia e o fluxo; a validade legal dos contratos é confirmada por assessoria jurídica em cada estado. Não oferecemos contabilidade nem assessoria fiscal: organizamos as informações para o seu contador.' }
+      ];
+      var LANG_META = {
+        es:{ title:'MSG Monterrey — Tu negocio digital, sin complicaciones',
+             desc:'MSG Monterrey — Multiservicios y Sistemas Generales de Monterrey. Tecnología clara para PyMEs: sistemas, nube, redes, seguridad, soporte e IA, con un solo responsable.',
+             slide:'Ir a la diapositiva', menu:'Abrir menú', brand:'MSG Monterrey — inicio', prev:'Anterior', next:'Siguiente',
+             form:{ subject:'Solicitud de diagnóstico — ', nombre:'Nombre: ', negocio:'Negocio: ', giro:'Giro: ', usuarios:'Usuarios / equipos: ', tel:'Teléfono o WhatsApp: ', dolor:'¿Qué nos duele hoy?' } },
+        en:{ title:'MSG Monterrey — Your digital business, made simple',
+             desc:'MSG Monterrey — Multiservicios y Sistemas Generales de Monterrey. Clear technology for SMBs: systems, cloud, networks, security, support and AI, with a single point of accountability.',
+             slide:'Go to slide', menu:'Open menu', brand:'MSG Monterrey — home', prev:'Previous', next:'Next',
+             form:{ subject:'Diagnosis request — ', nombre:'Name: ', negocio:'Business: ', giro:'Line of business: ', usuarios:'Users / devices: ', tel:'Phone or WhatsApp: ', dolor:'What hurts today?' } },
+        pt:{ title:'MSG Monterrey — Seu negócio digital, sem complicações',
+             desc:'MSG Monterrey — Multiservicios y Sistemas Generales de Monterrey. Tecnologia clara para PMEs: sistemas, nuvem, redes, segurança, suporte e IA, com um único responsável.',
+             slide:'Ir para o slide', menu:'Abrir menu', brand:'MSG Monterrey — início', prev:'Anterior', next:'Próximo',
+             form:{ subject:'Solicitação de diagnóstico — ', nombre:'Nome: ', negocio:'Negócio: ', giro:'Ramo: ', usuarios:'Usuários / equipamentos: ', tel:'Telefone ou WhatsApp: ', dolor:'O que dói hoje?' } }
+      };
+      function detectLang(){
+        var supported = { es:1, en:1, pt:1 };
+        var regionLang = { MX:'es', ES:'es', AR:'es', CO:'es', CL:'es', PE:'es', VE:'es', EC:'es', GT:'es', CU:'es', BO:'es', DO:'es', HN:'es', PY:'es', SV:'es', NI:'es', CR:'es', PA:'es', UY:'es', PR:'es', GQ:'es',
+                           US:'en', GB:'en', CA:'en', AU:'en', NZ:'en', IE:'en', ZA:'en', NG:'en', KE:'en', GH:'en', IN:'en', SG:'en', PH:'en',
+                           BR:'pt', PT:'pt', AO:'pt', MZ:'pt', CV:'pt', GW:'pt', TL:'pt' };
+        var langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [ navigator.language || '' ];
+        var i, parts;
+        for (i = 0; i < langs.length; i++) {
+          parts = String(langs[i]).replace('_', '-').split('-');
+          if (supported[parts[0].toLowerCase()]) return parts[0].toLowerCase();
+        }
+        for (i = 0; i < langs.length; i++) {
+          parts = String(langs[i]).replace('_', '-').split('-');
+          var region = (parts[1] || '').toUpperCase();
+          if (regionLang[region]) return regionLang[region];
+        }
+        try {
+          var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+          if (/Mexico|Monterrey|Mazatlan|Hermosillo|Tijuana|Cancun|Merida|Bahia_Tortugas|Ensenada/.test(tz)) return 'es';
+          if (/Sao_Paulo|Belem|Fortaleza|Recife|Manaus|Porto_Alegre|Cuiaba|Campo_Grande|Rio_Branco|Boa_Vista|Porto_Velho|Santarem|Maceio|Noronha/.test(tz)) return 'pt';
+          if (/Lisbon|Funchal|Azores/.test(tz)) return 'pt';
+          if (/Madrid|Canarias|Ceuta/.test(tz)) return 'es';
+          if (/Buenos_Aires|Cordoba|Mendoza|Tucuman|Salta|Jujuy|San_Luis|Catamarca|La_Rioja|San_Juan|Rio_Gallegos|Ushuaia|Santiago|Lima|Bogota|Guayaquil|Caracas|La_Paz|Asuncion|Montevideo|Havana|Guatemala|Tegucigalpa|Managua|Panama|Santo_Domingo|San_Jose|San_Salvador/.test(tz)) return 'es';
+          if (/New_York|Chicago|Denver|Phoenix|Los_Angeles|Anchorage|Honolulu|Detroit|Indiana|Kentucky|Boise|Juneau|Sitka|Metlakatla|Nome|Yakutat|Toronto|Winnipeg|Halifax|Vancouver|Edmonton|Regina|St_Johns|Whitehorse|Yellowknife|Iqaluit|London|Dublin|Sydney|Melbourne|Brisbane|Perth|Adelaide|Hobart|Darwin|Auckland|Wellington/.test(tz)) return 'en';
+        } catch (e) {}
+        return 'es';
+      }
+      var textStore = [], phStore = [];
+      (function collect(){
+        var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+          acceptNode: function(n){
+            var p = n.parentNode;
+            if (!p || p.nodeName === 'SCRIPT' || p.nodeName === 'STYLE' || p.nodeName === 'SELECT') return NodeFilter.FILTER_REJECT;
+            if (!n.nodeValue || !n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+            return NodeFilter.FILTER_ACCEPT;
+          }
+        });
+        var n;
+        while ((n = walker.nextNode())) textStore.push({ node: n, es: n.nodeValue });
+        Array.prototype.forEach.call(document.querySelectorAll('[placeholder]'), function(el){
+          phStore.push({ el: el, es: el.getAttribute('placeholder') });
+        });
+      })();
+      function norm(s){ return s.replace(/\s+/g, ' ').trim(); }
+      function renderServices(lang){
+        var data = lang === 'en' ? SERVICES_EN : (lang === 'pt' ? SERVICES_PT : SERVICES);
+        var ui = SVC_UI[lang] || SVC_UI.es;
+        var g = document.getElementById('svcGrid');
+        var openIdx = 0, k;
+        for (k = 0; k < g.children.length; k++) { if (g.children[k].classList.contains('open')) { openIdx = k; break; } }
+        g.innerHTML = '';
+        data.forEach(function(s, i){
+          var card = document.createElement('article');
+          card.className = 'svc' + (i === openIdx ? ' open' : '');
+          var lis = s.includes.map(function(x){ return '<li>' + x + '</li>'; }).join('');
+          card.innerHTML =
+            '<button class="svc-head" aria-expanded="' + (i === openIdx) + '">' +
+              '<span class="ic">' + icon(s.icon) + '</span>' +
+              '<span><h3>' + s.title + '</h3><p>' + s.line + '</p></span>' +
+              '<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>' +
+            '</button>' +
+            '<div class="svc-body">' +
+              '<h4>' + ui.includes + '</h4><ul>' + lis + '</ul>' +
+              '<h4>' + ui.who + '</h4><ul><li>' + s.who + '</li></ul>' +
+              '<div class="svc-meta">' +
+                '<span class="chip"><b>' + ui.charge + '</b>&nbsp;' + s.charge + '</span>' +
+              '</div>' +
+              '<h4>' + ui.not + '</h4><ul><li>' + s.not + '</li></ul>' +
+            '</div>';
+          card.querySelector('.svc-head').addEventListener('click', function(){
+            var open = card.classList.toggle('open');
+            this.setAttribute('aria-expanded', open);
+          });
+          g.appendChild(card);
+        });
+      }
+      var currentLang = 'es';
+      function applyLang(lang){
+        if (!LANG_META[lang]) lang = 'es';
+        currentLang = lang;
+        var dict = lang === 'en' ? I18N_EN : (lang === 'pt' ? I18N_PT : null);
+        var phDict = lang === 'en' ? PH_EN : (lang === 'pt' ? PH_PT : null);
+        textStore.forEach(function(item){
+          if (!item.node.parentNode) return;
+          if (!dict) { item.node.nodeValue = item.es; return; }
+          var m = item.es.match(/^(\s*)([\s\S]*?)(\s*)$/);
+          var t = dict[norm(item.es)];
+          item.node.nodeValue = t ? (m[1] + t + m[3]) : item.es;
+        });
+        phStore.forEach(function(item){
+          item.el.setAttribute('placeholder', (phDict && phDict[item.es]) ? phDict[item.es] : item.es);
+        });
+        var meta = LANG_META[lang];
+        document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+        document.title = meta.title;
+        var md = document.querySelector('meta[name="description"]');
+        if (md) md.setAttribute('content', meta.desc);
+        var sel = document.getElementById('langSelect');
+        if (sel) sel.value = lang;
+        var menuBtn = document.getElementById('menuBtn');
+        if (menuBtn) menuBtn.setAttribute('aria-label', meta.menu);
+        var brand = document.querySelector('.brand');
+        if (brand) brand.setAttribute('aria-label', meta.brand);
+        var prev = document.getElementById('prevSlide'), next = document.getElementById('nextSlide');
+        if (prev) prev.setAttribute('aria-label', meta.prev);
+        if (next) next.setAttribute('aria-label', meta.next);
+        Array.prototype.forEach.call(document.querySelectorAll('#dots .dot'), function(d, i){
+          d.setAttribute('aria-label', meta.slide + ' ' + (i + 1));
+        });
+        for (var key in meta.form) { if (Object.prototype.hasOwnProperty.call(meta.form, key)) FORM_T[key] = meta.form[key]; }
+        renderServices(lang);
+      }
+      var langSelect = document.getElementById('langSelect');
+      if (langSelect) langSelect.addEventListener('change', function(){ applyLang(this.value); });
+      applyLang(detectLang());
+    </script>
+  </body>
+</html>
